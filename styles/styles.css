@@ -975,10 +975,10 @@ article p > .button {
 	.hero_portrait {
 		/* Enlarge the portrait independently of the shorter, cropped hero frame. */
 		position: absolute;
-		width: 135%;
+		width: 150%;
 		height: auto;
 		left: 50%;
-		top: -12%;
+		top: -14%;
 		translate: -50% 0;
 		background-size: contain;
 		background-position: center bottom;
