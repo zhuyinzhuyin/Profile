@@ -15,6 +15,7 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>Case Study - imagineAPP</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<script src="scripts/site.js" defer></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Caveat+Brush&family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mynerve&family=Satisfy&display=swap" rel="stylesheet">
@@ -49,7 +50,10 @@
 		<div class="wrap">
 			<div class="left">
 				<a class="logo" href="https://yinzhudesign.com"><img src="images/yinzhu_design_logo.svg"></a>
-				<nav>
+				<button class="nav_toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+					<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+				</button>
+				<nav id="primary-navigation" aria-label="Main navigation">
 					<ul>
 						<li>
 							<a href="index.html#uiux_design">UI/UX Design</a>
@@ -365,7 +369,7 @@
 				</svg>
 			</a>
 		</div>
-		<div class="copyright_info">All Rights Reserved 2025</div>
+		<div class="copyright_info">All Rights Reserved <span data-copyright-year data-start-year="2025">2025</span></div>
 	</footer>
 </body>
 </html>
