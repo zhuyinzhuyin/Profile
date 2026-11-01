@@ -847,7 +847,7 @@ article p > .button {
 }
 .nav_toggle { display: none; }
 .nav .nav_panel_heading, .nav .nav_link_caption,
-.nav .nav_arrow, .nav .nav_panel_footer, .nav_scrim { display: none; }
+.nav .nav_arrow, .nav_scrim { display: none; }
 
 /* Keep the desktop composition while allowing smaller laptops and tablets. */
 @media (max-width: 1247px) {
@@ -893,8 +893,17 @@ article p > .button {
 @media (max-width: 767px) {
 	html { scroll-padding-top: 88px; scrollbar-gutter: stable; }
 	body.mobile_menu_open { overflow: hidden; }
-	.nav { --nav-surface: #202621; --nav-muted: #adb4ae; --nav-accent: #4cec8c; }
-	.nav.menu_open { background: #151515; backdrop-filter: none; }
+	.nav { --nav-surface: rgba(21, 21, 21, 0.8); --nav-muted: #adb4ae; --nav-accent: #4cec8c; background: transparent; backdrop-filter: none; }
+	/* Share the frosted surface without nesting the panel inside a blur filter. */
+	.nav::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: var(--nav-surface);
+		backdrop-filter: blur(20px);
+		pointer-events: none;
+	}
 	div.hero_content, .section_wrap, .nav .wrap, article,
 	header.detail_page .mockup, .mockup_video {
 		width: calc(100% - 32px);
@@ -923,6 +932,7 @@ article p > .button {
 		border: 1px solid rgba(255, 255, 255, 0.12);
 		border-radius: 20px;
 		background: var(--nav-surface);
+		backdrop-filter: blur(20px);
 		box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
 		opacity: 0;
 		visibility: hidden;
@@ -941,7 +951,6 @@ article p > .button {
 		text-transform: uppercase;
 		color: var(--nav-accent);
 	}
-	.nav .nav_panel_heading span:last-child { color: var(--nav-muted); letter-spacing: 0.04em; text-transform: none; }
 	.nav ul { flex-direction: column; gap: 6px; }
 	.nav ul li { width: 100%; }
 	.nav ul li a {
@@ -971,18 +980,6 @@ article p > .button {
 		transition: background-color 180ms ease, color 180ms ease;
 	}
 	.nav a[aria-current="location"] .nav_arrow { background: var(--nav-accent); border-color: var(--nav-accent); color: #151515; }
-	.nav .nav_panel_footer {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 12px;
-		margin: 16px 16px 0;
-		padding-top: 16px;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-		font: 400 11px/1.5 Montserrat, sans-serif;
-		color: var(--nav-muted);
-	}
-	.nav .nav_panel_footer a { display: flex; align-items: center; gap: 8px; min-height: 44px; color: var(--nav-accent); font-size: 13px; font-weight: 500; text-decoration: none; }
 	.nav_scrim {
 		display: block;
 		position: fixed;
@@ -1011,9 +1008,9 @@ article p > .button {
 		padding: 0;
 		border: 0;
 		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.04);
+		background: transparent;
 		color: #fff;
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+		box-shadow: none;
 		cursor: pointer;
 	}
 	.nav_toggle span { width: 20px; height: 1.5px; background: currentColor; border-radius: 2px; transition: transform 200ms ease, opacity 160ms ease; }
