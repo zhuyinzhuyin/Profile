@@ -463,6 +463,11 @@ html[data-mirai-reloading] > body { visibility: hidden; }
 
 .mirai-dashboard-detail .case-media { border: 0; }
 
+.mirai-dashboard-activity {
+	background: rgb(32 34 40 / 30%);
+	backdrop-filter: blur(24px);
+}
+
 @media (width >= 56rem) {
 	.mirai-dashboard-composition {
 		position: relative;
