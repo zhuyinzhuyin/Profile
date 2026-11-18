@@ -919,6 +919,7 @@ html[data-mirai-reloading] > body { visibility: hidden; }
 		inset-block-start: calc(var(--mirai-data-screen-top) + var(--mirai-data-line-top));
 		inline-size: calc(var(--mirai-data-nav-x) - var(--mirai-data-card-x));
 		block-size: calc(var(--mirai-data-line-bottom) - var(--mirai-data-line-top));
+		opacity: 0.5;
 		pointer-events: none;
 	}
 
