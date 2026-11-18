@@ -250,6 +250,69 @@ div.hero_content{
 	font-weight: 400;
 	line-height: normal;
 }
+
+.mirai-project-card .case_detail {
+	display: grid;
+	grid-template-columns: 70px minmax(0, 1fr);
+	align-items: center;
+}
+
+.mirai-project-card .case_detail .name { width: auto; white-space: nowrap; }
+.mirai-project-card .mirai-project-roles .tags { flex-wrap: nowrap; }
+
+.mirai-project-card .mirai-project-roles .tags .tag {
+	padding-inline: clamp(6px, 0.7vw, 10px);
+	white-space: nowrap;
+}
+
+.mirai-project-tool {
+	overflow: hidden;
+	border-radius: 8px;
+	background: rgb(255 255 255 / 5%);
+}
+
+.mirai-project-tool img { display: block; opacity: 0.75; }
+.mirai-tool-antigravity { filter: brightness(0) invert(1); }
+
+@media (min-width: 1024px) {
+	.mirai-project-card {
+		position: relative;
+		isolation: isolate;
+	}
+
+	.mirai-project-card .thumbnail {
+		height: auto;
+		aspect-ratio: 700 / 480;
+	}
+
+	.mirai-project-card .thumbnail picture {
+		position: absolute;
+		z-index: -1;
+		inset: 14px;
+		pointer-events: none;
+	}
+
+	.mirai-project-card .thumbnail picture img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: left center;
+	}
+}
+
+@media (max-width: 460px) {
+	.mirai-project-card .case_detail {
+		grid-template-columns: clamp(44px, 14vw, 54px) minmax(0, 1fr);
+		gap: clamp(4px, 1.25vw, 6px);
+	}
+	.mirai-project-card .case_detail .name { font-size: 12px; }
+	.mirai-project-card .mirai-project-roles .tags { gap: clamp(2px, 0.65vw, 4px); }
+	.mirai-project-card .mirai-project-roles .tags .tag {
+		padding-inline: clamp(2px, calc(7vw - 20.4px), 7px);
+		font-size: clamp(11px, 3.2vw, 14px);
+	}
+}
+
 a.button_s{
 	display: flex;
 	min-width: 98px;

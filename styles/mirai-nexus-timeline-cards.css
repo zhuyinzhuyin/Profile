@@ -1,0 +1,1093 @@
+html[data-mirai-reloading] {
+	background: var(--ds-bg-canvas);
+	scroll-behavior: auto;
+}
+
+html[data-mirai-reloading] > body { visibility: hidden; }
+
+.mirai-mockup > .nav {
+	position: relative;
+	top: auto;
+}
+
+.mirai-back-to-top:not([hidden]) {
+	position: fixed;
+	z-index: 8;
+	inset-inline-end: max(var(--ds-space-4), env(safe-area-inset-right));
+	inset-block-end: max(var(--ds-space-4), env(safe-area-inset-bottom));
+	display: grid;
+	place-items: center;
+	inline-size: var(--ds-space-12);
+	block-size: var(--ds-space-12);
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: var(--mirai-primary-blue);
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 32%);
+}
+
+.mirai-back-to-top::before {
+	content: "";
+	inline-size: 0.625rem;
+	block-size: 0.625rem;
+	border-block-start: 2px solid currentColor;
+	border-inline-start: 2px solid currentColor;
+	transform: translateY(25%) rotate(45deg);
+}
+
+.mirai-back-to-top:hover { background: color-mix(in srgb, var(--mirai-primary-blue) 82%, #fff); }
+
+.mirai-draft .mirai-cover {
+	/* The outer devices span 60.3% of the panorama, centered at 47.35%. */
+	--mirai-hero-frame: calc(100% - 20px);
+	--mirai-draft-device-width: calc(var(--mirai-hero-frame) / 0.603);
+	--mirai-hero-offset: calc(var(--mirai-draft-device-width) * 0.0265);
+	overflow-x: clip;
+}
+
+.mirai-draft-device-stage .mirai-device-scene {
+	inline-size: var(--mirai-draft-device-width);
+	margin-inline: calc(50% - var(--mirai-draft-device-width) / 2 + var(--mirai-hero-offset)) 0;
+}
+
+@media (width >= 48rem) {
+	.mirai-draft .mirai-cover {
+		--mirai-hero-frame: min(var(--case-max-width), calc(100cqw - 2 * var(--case-gutter)));
+		--mirai-hero-backdrop-width: max(var(--mirai-draft-device-width), calc(100cqw + 2 * var(--mirai-hero-offset)));
+		--mirai-draft-side-width: calc(var(--mirai-hero-backdrop-width) / 2 - var(--mirai-draft-device-width) * 0.36);
+	}
+
+	.mirai-draft-device-stage::before {
+		--mirai-draft-stage-image: url("../images/mirai-nexus/structure-draft/hero-panorama-original.png");
+		inset-inline: 50% auto;
+		inline-size: var(--mirai-hero-backdrop-width);
+		translate: calc(-50% + var(--mirai-hero-offset));
+	}
+
+	.mirai-draft .mirai-cover::after {
+		inline-size: var(--mirai-hero-backdrop-width);
+		translate: var(--mirai-hero-offset);
+	}
+}
+
+.mirai-capabilities {
+	gap: clamp(var(--ds-space-4), 2.6vw, 2.25rem);
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.case-hero .mirai-capabilities > div {
+	padding: clamp(var(--ds-space-6), 3.15vw, 2.625rem);
+}
+
+.case-hero .mirai-capabilities > div,
+.mirai-appraisal-automation-list > li {
+	border: 0;
+	border-radius: var(--ds-radius-xl);
+	background: #fff;
+	color: #151827;
+}
+
+.case-hero .mirai-capabilities > div:nth-child(2) {
+	background: var(--mirai-primary-blue);
+	color: #fff;
+}
+
+.mirai-capabilities dt { gap: var(--ds-space-4); }
+.mirai-capabilities dd { margin-block-start: clamp(var(--ds-space-3), 1.4vw, 1.25rem); }
+
+@media (width < 56rem) {
+	.mirai-capabilities { grid-template-columns: minmax(0, 1fr); }
+}
+
+.mirai-timeline-phases--cards {
+	--mirai-timeline-card-blue: var(--mirai-primary-blue);
+	--mirai-timeline-card-gap: clamp(var(--ds-space-6), 3vw, 2.75rem);
+	--mirai-timeline-card-padding: clamp(var(--ds-space-6), 3.2vw, 2.75rem);
+	--mirai-timeline-card-connector: rgb(255 255 255 / 0.25);
+	grid-template-areas: ". research review" ". . audit";
+	grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr) minmax(0, 1.08fr);
+	gap: var(--mirai-timeline-card-gap);
+}
+
+.mirai-timeline-phases--cards::before { content: none; }
+
+.mirai-timeline-phases--cards > li {
+	--ds-text-primary: #151827;
+	--ds-text-muted: #424a5c;
+	--mirai-timeline-line-color: rgb(21 24 39 / 0.25);
+	position: relative;
+	display: flex;
+	min-inline-size: 0;
+	min-block-size: 22rem;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: var(--mirai-timeline-card-padding);
+	border-radius: 1.25rem;
+	background: #fff;
+	color: var(--ds-text-primary);
+}
+
+.mirai-timeline-phases--cards > li:first-child { grid-area: research; }
+
+.mirai-timeline-phases--cards > li:nth-child(2) {
+	--ds-text-primary: #fff;
+	--ds-text-muted: #fff;
+	--mirai-primary-blue: #fff;
+	--mirai-timeline-line-color: rgb(255 255 255 / 0.48);
+	grid-area: review;
+	background: var(--mirai-timeline-card-blue);
+}
+
+.mirai-timeline-phases--cards > li:last-child { grid-area: audit; }
+.mirai-timeline-phases--cards > li:nth-child(2) .mirai-timeline-icon { color: var(--mirai-timeline-card-blue); }
+.mirai-timeline-phases--cards .mirai-timeline-tree { align-self: stretch; }
+.mirai-timeline-phases--cards .mirai-timeline-rounds::before { border-color: var(--mirai-timeline-line-color); }
+
+.mirai-timeline-phases--cards .mirai-timeline-duration {
+	margin-block-start: auto;
+	padding-block-start: var(--ds-space-8);
+}
+
+.mirai-timeline-phases--cards > li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+}
+
+.mirai-timeline-phases--cards > li:first-child::after {
+	inset-block-start: calc(var(--mirai-timeline-card-padding) + var(--mirai-timeline-icon-size) / 2);
+	inset-inline-start: 100%;
+	inline-size: var(--mirai-timeline-card-gap);
+	border-block-start: 1px dashed var(--mirai-timeline-card-connector);
+}
+
+.mirai-timeline-phases--cards > li:nth-child(2)::after {
+	inset-block-start: 100%;
+	inset-inline-start: calc(var(--mirai-timeline-card-padding) + var(--mirai-timeline-icon-size) / 2);
+	block-size: var(--mirai-timeline-card-gap);
+	border-inline-start: 1px dashed var(--mirai-timeline-card-connector);
+}
+
+@media (width < 64rem) {
+	.mirai-timeline-phases--cards {
+		grid-template-areas: "research review" ". audit";
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (width < 48rem) {
+	.mirai-timeline-phases--cards {
+		grid-template-areas: "research" "review" "audit";
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.mirai-timeline-phases--cards > li { min-block-size: auto; }
+
+	.mirai-timeline-phases--cards > li:first-child::after {
+		inset-block-start: 100%;
+		inset-inline-start: calc(var(--mirai-timeline-card-padding) + var(--mirai-timeline-icon-size) / 2);
+		inline-size: 0;
+		block-size: var(--mirai-timeline-card-gap);
+		border-block-start: 0;
+		border-inline-start: 1px dashed var(--mirai-timeline-card-connector);
+	}
+}
+
+.mirai-draft-scope {
+	padding-block-end: clamp(var(--ds-space-3), 2vw, var(--ds-space-8));
+}
+
+.mirai-ui-showcase {
+	--mirai-ui-gallery-max: 63rem;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0;
+	padding-block-start: 0;
+	border-block-start: 0;
+}
+
+.mirai-ui-showcase .case-chapter-title {
+	container-type: inline-size;
+	max-inline-size: none;
+}
+
+.mirai-ui-title-lines {
+	display: block;
+	font-size: min(1em, 7.35cqi);
+	letter-spacing: var(--case-heading-tracking);
+}
+
+.mirai-title-fade {
+	display: block;
+	font-size: min(3.094em, var(--mirai-title-fit, 14.7cqi));
+	font-weight: var(--ds-weight-strong);
+	line-height: 0.96;
+	letter-spacing: var(--case-heading-tracking);
+	white-space: nowrap;
+	mask-image: linear-gradient(#000 20%, rgb(0 0 0 / 0.75) 55%, transparent);
+}
+
+.mirai-ui-title-lines .mirai-title-fade { text-transform: uppercase; }
+
+.mirai-ui-showcase img {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+}
+
+.mirai-ui-monitor {
+	position: relative;
+	margin-block-start: calc(0.625rem - 9.2vw);
+}
+
+.mirai-ui-monitor img {
+	/* Crop above the base and start the fade just below the bezel. */
+	aspect-ratio: 2945 / 2050;
+	object-fit: cover;
+	object-position: top;
+	mask-image: linear-gradient(to bottom, #000 94%, transparent);
+}
+
+@media (width >= 48rem) {
+	.mirai-ui-monitor {
+		/* Reduce the overlap's growth once the heading's column reaches its max width. */
+		margin-block-start: calc(clamp(0.5rem, 1.1vw, 1rem) - min(7.8cqw + 0.08rem, 4.15cqw + 3.125rem));
+	}
+
+	.mirai-ui-monitor img {
+		/* Allow for the image's transparent margins when cropping the screen. */
+		inline-size: 93cqw;
+		max-inline-size: none;
+		margin-inline-start: calc(50% - 59.5cqw);
+	}
+}
+
+.mirai-ui-rationale {
+	inline-size: min(100%, var(--mirai-ui-gallery-max));
+	margin-inline: auto;
+	margin-block: clamp(var(--ds-space-10), 5.5vw, 5.5rem);
+}
+
+.mirai-ui-rationale h3 {
+	font: var(--case-display-weight) clamp(1.625rem, 2.65vw, 2.375rem)/1.2 var(--ds-font-display);
+	letter-spacing: var(--case-heading-tracking);
+}
+
+.mirai-ui-rationale p {
+	max-inline-size: 60ch;
+	margin-block-start: clamp(var(--ds-space-4), 1.7vw, var(--ds-space-6));
+	color: var(--ds-text-muted);
+}
+
+.mirai-draft-story .case-copy,
+.mirai-ui-rationale p {
+	font-size: clamp(1.125rem, 1.55vw, 1.375rem);
+	line-height: 1.55;
+}
+
+.mirai-ui-components {
+	--mirai-ui-component-gap: clamp(var(--ds-space-4), 3.2vw, 3.5rem);
+	inline-size: min(100%, var(--mirai-ui-gallery-max));
+	margin-inline: auto;
+	mask-image: linear-gradient(#000 70%, transparent);
+}
+
+.mirai-ui-components,
+.mirai-ui-component-group {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-items: start;
+	gap: var(--mirai-ui-component-gap);
+}
+
+.mirai-draft-story {
+	--mirai-ui-component-padding: clamp(var(--ds-space-3), 1.5vw, var(--ds-space-6));
+}
+
+.mirai-ui-component {
+	padding: var(--mirai-ui-component-padding);
+	border-radius: 1.25rem;
+	background: #202228;
+}
+
+.mirai-ui-parts {
+	display: grid;
+	gap: var(--ds-space-2);
+}
+
+.mirai-ui-parts--toolbar {
+	grid-template-columns: minmax(0, 6fr) minmax(0, 7fr);
+	inline-size: min(100%, 30rem);
+	margin-inline: auto;
+}
+
+.mirai-ui-parts--toolbar img { border-radius: 12% / 34%; }
+.mirai-ui-parts--bulk img { border-radius: 7% / 34%; }
+.mirai-ui-component--menu img {
+	/* The 4× capture is 1024px wide. */
+	inline-size: 256px;
+	max-inline-size: 100%;
+	border-radius: 4.8% / 2.4%;
+}
+.mirai-ui-component--filter img { border-radius: 2.85% / 3.9%; }
+.mirai-ui-component--confirmation img { border-radius: 3.2% / 3.3%; }
+
+@media (width >= 48rem) {
+	.mirai-ui-parts--bulk {
+		grid-template-columns: minmax(0, 518fr) minmax(0, 624fr) minmax(0, 482fr);
+	}
+}
+
+@media (width >= 64rem) {
+	.mirai-ui-components {
+		--mirai-ui-gallery-start: max(var(--case-gutter), calc((100cqw - var(--mirai-ui-gallery-max)) / 2));
+		grid-template-areas:
+			"bulk bulk menu"
+			"tools filter menu";
+		grid-template-columns: minmax(0, 5fr) minmax(0, 7fr) minmax(0, 4.25fr);
+		inline-size: min(73rem, calc(100cqw - var(--mirai-ui-gallery-start) - var(--case-gutter)));
+		min-block-size: 0;
+		aspect-ratio: 2.53;
+		margin-inline-start: max(0px, calc((100% - var(--mirai-ui-gallery-max)) / 2));
+		overflow: clip;
+	}
+	.mirai-ui-component--bulk { grid-area: bulk; }
+	.mirai-ui-component--filter { grid-area: filter; }
+	.mirai-ui-component--menu { grid-area: menu; }
+
+	.mirai-ui-component-group {
+		grid-area: tools;
+		gap: clamp(var(--ds-space-4), 1.5vw, var(--ds-space-6));
+	}
+}
+
+@media (width < 64rem) {
+	.mirai-ui-component-group > .mirai-ui-component,
+	.mirai-ui-component--filter { justify-self: center; inline-size: min(100%, 36rem); }
+	.mirai-ui-component--menu { justify-self: center; }
+}
+
+.mirai-ui-component--menu {
+	inline-size: fit-content;
+	max-inline-size: 100%;
+}
+
+@media (width < 48rem) {
+	.mirai-ui-parts--bulk {
+		inline-size: min(100%, 22rem);
+		margin-inline: auto;
+	}
+}
+
+#pricing { border-block-start: 0; }
+
+.mirai-appraisal-heading {
+	grid-column: 1 / -1;
+	container-type: inline-size;
+}
+
+.mirai-appraisal-heading .case-chapter-title { max-inline-size: none; }
+
+.mirai-appraisal-heading .case-chapter-title span {
+	display: block;
+	font-size: min(1.5em, 13cqi);
+	font-weight: var(--ds-weight-strong);
+	text-transform: uppercase;
+}
+
+.mirai-appraisal-title-accent { color: var(--mirai-primary-blue); }
+
+.mirai-appraisal-heading .case-copy { max-inline-size: 64ch; }
+
+.mirai-appraisal-walkthrough {
+	--mirai-appraisal-panel-aspect: calc(2020 / 1584);
+	--mirai-appraisal-detail-title-size: 14px;
+	display: grid;
+	gap: var(--case-section-space);
+	margin-block-start: clamp(var(--ds-space-4), 3.3vw, var(--ds-space-12));
+}
+
+.mirai-draft .mirai-appraisal-walkthrough .case-caption {
+	display: block;
+	margin-block-end: var(--ds-space-3);
+	padding: 0;
+	color: var(--ds-text-primary);
+}
+
+.mirai-draft .mirai-appraisal-walkthrough .mirai-appraisal-detail .case-caption {
+	padding-inline: var(--mirai-ui-component-padding);
+}
+
+.mirai-appraisal-detail .case-card-title {
+	font-size: var(--mirai-appraisal-detail-title-size);
+	font-weight: 400;
+}
+
+:is(.mirai-appraisal-monitor, .mirai-design-system-gallery) {
+	/* Panel bounds in the 1398 × 1125 front-facing monitor photo. */
+	--mirai-front-screen-start: calc(39 / 1398);
+	--mirai-front-screen-width: calc(1324 / 1398);
+	--mirai-front-screen-aspect: 1324 / 844;
+}
+
+.mirai-appraisal-monitor {
+	position: relative;
+	aspect-ratio: 1398 / 1125;
+	background: url("../images/mirai-nexus/structure-draft/dashboard-monitor-front.webp") top / 100% auto no-repeat;
+}
+
+.mirai-appraisal-monitor .case-media {
+	/* Fit the screenshot to the panel at (39, 33) in the 1398 × 1125 photo. */
+	position: absolute;
+	inset-inline-start: calc(100% * var(--mirai-front-screen-start));
+	inset-block-start: calc(100% * 33 / 1125);
+	inline-size: calc(100% * var(--mirai-front-screen-width));
+	block-size: calc(100% * 844 / 1125);
+	border: 0;
+	border-radius: 0;
+	background: #101218;
+}
+
+@media (width >= 48rem) {
+	.mirai-draft-dashboard > .mirai-appraisal-monitor { inline-size: 65cqw; }
+}
+
+.mirai-dashboard-composition {
+	display: grid;
+	gap: var(--ds-space-4);
+}
+
+.mirai-dashboard-detail .case-media { border: 0; }
+
+@media (width >= 56rem) {
+	.mirai-dashboard-composition {
+		position: relative;
+		display: block;
+	}
+
+	.mirai-dashboard-detail {
+		position: absolute;
+		inline-size: 27cqw;
+	}
+
+	.mirai-dashboard-reminders {
+		inset-block-start: 1%;
+		inset-inline-end: calc(50% + 12.5cqw);
+	}
+
+	.mirai-dashboard-activity {
+		inset-block-start: 39%;
+		inset-inline-end: calc(50% + 3.8cqw);
+		inline-size: 28.3cqw;
+	}
+}
+
+.mirai-appraisal-details {
+	display: grid;
+	align-items: start;
+	gap: clamp(var(--ds-space-6), 3.2vw, var(--ds-space-12));
+	inline-size: min(100%, 65rem);
+	margin-inline: auto;
+}
+
+.mirai-appraisal-detail > .mirai-ui-component,
+.mirai-appraisal-data-details > .mirai-ui-component {
+	background: rgb(32 34 40 / 62%);
+	backdrop-filter: blur(48px);
+}
+
+.mirai-appraisal-panel {
+	/* Both captures use the same main dialog bounds, without the adjacent timeline. */
+	position: relative;
+	aspect-ratio: var(--mirai-appraisal-panel-aspect);
+	overflow: hidden;
+	border-radius: 1.6% / 2%;
+}
+
+.mirai-appraisal-panel img {
+	position: absolute;
+	inset-inline-start: calc(-100% * 72 / 2020);
+	inset-block-start: calc(-100% * 108 / 1584);
+	inline-size: calc(100% * 2880 / 2020);
+	max-inline-size: none;
+	block-size: auto;
+}
+
+.mirai-appraisal-automations {
+	display: block;
+	margin-block-start: clamp(var(--ds-space-6), 4vw, 4rem);
+}
+
+.mirai-appraisal-automations .case-chapter-title {
+	max-inline-size: none;
+	font-size: clamp(1.875rem, 3vw, 2.75rem);
+	text-align: start;
+}
+
+.mirai-appraisal-automations .case-chapter-title span { white-space: nowrap; }
+
+.mirai-appraisal-automation-list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(var(--ds-space-4), 2.2vw, var(--ds-space-8));
+	margin: clamp(var(--ds-space-8), 4vw, 4rem) 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.mirai-appraisal-automation-list > li {
+	display: grid;
+	align-content: start;
+	gap: var(--ds-space-4);
+	padding: clamp(var(--ds-space-4), 2.6vw, var(--ds-space-8));
+	font-size: clamp(var(--ds-type-body), 1.3vw, 1.125rem);
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.mirai-appraisal-automation-list svg {
+	inline-size: clamp(3rem, 5vw, 4.5rem);
+	block-size: auto;
+	color: var(--mirai-automation-icon, var(--mirai-primary-blue));
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 0.85;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+:is(#appraisal-data, #access-permissions) {
+	row-gap: clamp(2rem, 5vw, 4.5rem);
+	border-block-start: 0;
+}
+
+:is(#appraisal-data, #access-permissions) .case-chapter-title + .case-copy {
+	margin-block-start: clamp(var(--ds-space-6), 2vw, var(--ds-space-8));
+}
+
+.mirai-appraisal-data-screens {
+	grid-column: 1 / -1;
+	align-items: start;
+	--mirai-appraisal-data-gap: clamp(var(--ds-space-8), 3.6vw, var(--ds-space-12));
+}
+
+.mirai-appraisal-data-screens,
+.mirai-appraisal-data-details {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: var(--mirai-appraisal-data-gap);
+}
+
+.mirai-appraisal-data-specs .case-media { object-fit: contain; }
+
+.mirai-appraisal-data-connector { display: none; }
+
+.mirai-appraisal-data-details .case-media {
+	border: 0;
+	aspect-ratio: 1392 / 920;
+}
+
+.mirai-access-composition {
+	/* Screen bounds in the 2400 × 1376 MacBook artwork. */
+	--mirai-access-screen-x: calc(100% * 262 / 2400);
+	--mirai-access-screen-y: calc(100% * 72 / 1376);
+	--mirai-access-screen-width: calc(100% * 1876 / 2400);
+	--mirai-access-screen-height: calc(100% * 1184 / 1376);
+	grid-column: 1 / -1;
+	inline-size: 100%;
+}
+
+.mirai-access-macbook {
+	position: relative;
+	aspect-ratio: 2400 / 1376;
+	background: url("../images/laptop_empty.webp") center / contain no-repeat;
+}
+
+.mirai-access-macbook .case-media {
+	position: absolute;
+	inset-inline-start: var(--mirai-access-screen-x);
+	inset-block-start: var(--mirai-access-screen-y);
+	inline-size: var(--mirai-access-screen-width);
+	block-size: var(--mirai-access-screen-height);
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	object-fit: contain;
+}
+
+.mirai-access-dialog {
+	inline-size: min(70%, 19rem);
+	margin: var(--ds-space-4) auto 0;
+}
+
+.mirai-access-dialog .case-media {
+	border: 0;
+	border-radius: 2.8% / 2.3%;
+	box-shadow: 0 1rem 2.75rem rgb(0 0 0 / 45%);
+}
+
+.mirai-avatar-chapter { border-block-start: 0; }
+
+.mirai-avatar-chapter {
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0;
+}
+
+.mirai-avatar-heading,
+.mirai-avatar-cloud { grid-area: 1 / 1; }
+
+.mirai-avatar-heading {
+	z-index: 1;
+	justify-self: center;
+	inline-size: 42%;
+	margin-block-start: 18.5%;
+	text-align: center;
+	translate: -16% 0;
+}
+
+.mirai-avatar-heading .case-chapter-title {
+	max-inline-size: none;
+	font-size: clamp(2.25rem, 6vw, 5.5rem);
+	line-height: 1;
+}
+
+.mirai-avatar-heading .case-copy { margin-inline: auto; }
+
+.mirai-avatar-cloud {
+	position: relative;
+	container-type: inline-size;
+	aspect-ratio: 12 / 7;
+}
+
+.mirai-avatar-bubble {
+	position: absolute;
+	inset: var(--y) auto auto var(--x);
+	inline-size: var(--size);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: url("../images/mirai-nexus/structure-draft/mirai-animals.webp") no-repeat;
+	background-size: 400% 400%;
+	background-position: calc(var(--col) * 100% / 3) calc(var(--row) * 100% / 3);
+	translate: -50% -50%;
+}
+
+.mirai-avatar-bubble--extended {
+	background-image: url("../images/mirai-nexus/structure-draft/mirai-animals-extended.webp");
+	background-size: 200% 200%;
+	background-position: calc(var(--col) * 100%) calc(var(--row) * 100%);
+}
+
+.mirai-design-system {
+	grid-template-columns: minmax(0, 1fr);
+	row-gap: clamp(var(--ds-space-8), 4vw, 3.5rem);
+	border-block-start: 0;
+}
+
+.mirai-design-system > header { text-align: center; }
+
+.mirai-design-system .case-chapter-title {
+	--mirai-title-fit: 13.3cqi;
+	container-type: inline-size;
+	max-inline-size: none;
+}
+
+.mirai-design-system-native {
+	display: block;
+	font-size: min(1.5em, 9cqi);
+	font-weight: var(--ds-weight-strong);
+	line-height: 1;
+}
+
+.mirai-design-system-lead {
+	margin-block: var(--ds-space-4) var(--ds-space-3);
+	font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+	font-weight: var(--ds-weight-strong);
+	line-height: 1.35;
+	text-wrap: balance;
+}
+
+.mirai-design-system-lead span { color: var(--mirai-primary-blue); }
+.mirai-design-system > header .case-copy { margin-inline: auto; }
+
+.mirai-design-system-gallery {
+	display: grid;
+	align-items: start;
+	gap: clamp(var(--ds-space-4), 2.5vw, var(--ds-space-8));
+}
+
+.mirai-design-system-overview .case-media { object-fit: cover; }
+
+.mirai-design-system-detail {
+	--mirai-ui-component-padding: clamp(var(--ds-space-2), 1.2vw, var(--ds-space-4));
+	background: rgb(32 34 40 / 85%);
+	backdrop-filter: blur(24px);
+}
+
+.mirai-design-system-detail .case-media {
+	aspect-ratio: var(--mirai-front-screen-aspect);
+	object-fit: cover;
+	object-position: top;
+	border: 0;
+}
+
+.mirai-design-skills h3 {
+	margin-block-end: var(--ds-space-6);
+	font-size: var(--ds-type-lead);
+	line-height: 1.25;
+}
+
+.mirai-design-skill-list {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: clamp(var(--ds-space-4), 2.5vw, var(--ds-space-8));
+	padding: 0;
+	list-style: none;
+}
+
+.mirai-design-skill-list > li {
+	padding: clamp(var(--ds-space-6), 2.6vw, var(--ds-space-10));
+	border-radius: var(--ds-radius-xl);
+	background: var(--mirai-primary-blue);
+	color: #fff;
+}
+
+.mirai-design-skill-list > li:nth-child(even) {
+	background: #fff;
+	color: #151827;
+}
+
+.mirai-design-skill-list h4 {
+	margin-block-end: var(--ds-space-2);
+	font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+	line-height: 1.25;
+}
+
+.mirai-skill-file {
+	position: relative;
+	display: grid;
+	place-items: end center;
+	inline-size: 3rem;
+	block-size: 3.625rem;
+	margin-block-end: var(--ds-space-6);
+	padding-block-end: var(--ds-space-2);
+	border-radius: var(--ds-radius-md);
+	background: color-mix(in srgb, currentColor 14%, transparent);
+	clip-path: polygon(0 0, calc(100% - 0.875rem) 0, 100% 0.875rem, 100% 100%, 0 100%);
+	font: var(--ds-weight-strong) var(--ds-type-label) ui-monospace, monospace;
+}
+
+.mirai-skill-file::before {
+	content: "";
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-end: 0;
+	inline-size: 0.875rem;
+	block-size: 0.875rem;
+	border-end-start-radius: 0.2rem;
+	background: color-mix(in srgb, currentColor 32%, transparent);
+}
+
+@media (width >= 54rem) {
+	.mirai-design-system-gallery {
+		/* Keep 30% of each framed detail inside the active display. */
+		--mirai-overview-width: 61%;
+		--mirai-detail-width: 29%;
+		--mirai-overview-gutter: calc((100% - var(--mirai-overview-width)) / 2);
+		--mirai-detail-outside: calc(var(--mirai-detail-width) * 0.7);
+		position: relative;
+		display: block;
+	}
+
+	.mirai-design-system-overview {
+		inline-size: var(--mirai-overview-width);
+		margin-inline: auto;
+	}
+
+	.mirai-design-system-detail {
+		position: absolute;
+		inline-size: var(--mirai-detail-width);
+	}
+
+	.mirai-design-system-components {
+		inset-block-start: 12%;
+		inset-inline-start: calc(var(--mirai-overview-gutter) + var(--mirai-overview-width) * var(--mirai-front-screen-start) - var(--mirai-detail-outside));
+	}
+
+	.mirai-design-system-tokens {
+		inset-block-end: 24%;
+		inset-inline-end: calc(var(--mirai-overview-gutter) + var(--mirai-overview-width) * (1 - var(--mirai-front-screen-start) - var(--mirai-front-screen-width)) - var(--mirai-detail-outside));
+	}
+
+	.mirai-design-skill-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (48rem <= width < 56rem) {
+	.mirai-avatar-heading { margin-block-start: 16%; }
+}
+
+@media (width < 48rem) {
+	.mirai-avatar-heading {
+		inline-size: 88%;
+		margin-block-start: 29%;
+		translate: none;
+	}
+
+	.mirai-avatar-cloud { aspect-ratio: 5 / 8; }
+
+	.mirai-avatar-bubble {
+		inset: var(--my) auto auto var(--mx);
+		inline-size: var(--ms);
+	}
+
+	.mirai-avatar-bubble--wide { display: none; }
+}
+
+@media (width < 23rem) {
+	.mirai-avatar-heading { inline-size: 100%; }
+	.mirai-avatar-heading .case-chapter-title { font-size: 2rem; }
+	.mirai-avatar-shiba { top: 67%; }
+	.mirai-avatar-bee { top: 58%; }
+}
+
+@media (width >= 48rem) {
+	.mirai-access-composition {
+		position: relative;
+		inline-size: min(92%, 68rem);
+	}
+
+	.mirai-access-dialog {
+		position: absolute;
+		inset-inline-start: calc(var(--mirai-access-screen-x) + 0.85 * var(--mirai-access-screen-width));
+		inset-block-start: calc(var(--mirai-access-screen-y) + 0.223 * var(--mirai-access-screen-height));
+		inline-size: calc(0.39 * var(--mirai-access-screen-width));
+		margin: 0;
+	}
+}
+
+@media (width < 64rem) {
+	.mirai-appraisal-automation-list > li:is(:nth-child(4n + 2), :nth-child(4n + 3)) {
+		--mirai-automation-icon: currentColor;
+		background: var(--mirai-primary-blue);
+		color: #fff;
+	}
+}
+
+@media (width >= 48rem) {
+	.mirai-appraisal-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (width >= 56rem) {
+	.mirai-appraisal-walkthrough,
+	.mirai-appraisal-data-screens {
+		--mirai-appraisal-monitor-width: min(66cqw, 88rem);
+	}
+
+	.mirai-appraisal-data-screens {
+		--mirai-data-crop-height: calc(var(--mirai-appraisal-monitor-width) * 422 / 1398);
+		--mirai-data-stack-top: calc(var(--mirai-appraisal-monitor-width) * 33 / 1398 - var(--mirai-ui-component-padding));
+		--mirai-data-card-height: calc(var(--mirai-data-crop-height) + 2 * var(--mirai-ui-component-padding));
+		--mirai-data-stack-height: calc(2 * var(--mirai-data-card-height) + var(--mirai-appraisal-data-gap));
+		--mirai-data-monitor-width: calc(var(--mirai-data-stack-height) * 1398 / 844);
+		--mirai-data-screen-top: calc(var(--mirai-data-monitor-width) * 33 / 1398);
+		--mirai-data-monitor-offset: calc(var(--mirai-data-screen-top) - var(--mirai-data-stack-top));
+		position: relative;
+		column-gap: 0;
+		padding-block-start: var(--mirai-data-monitor-offset);
+	}
+
+	.mirai-appraisal-data-connector {
+		/* Menu anchors are measured against the 2880 × 1800 screenshot. */
+		--mirai-data-nav-x: calc(45cqw + var(--mirai-data-monitor-width) * (39 - 19 + 1324 * 73 / 2880) / 1398);
+		--mirai-data-card-x: calc(25cqw + var(--mirai-data-crop-height) * 1392 / 1840);
+		--mirai-data-line: 2px dashed color-mix(in srgb, var(--mirai-primary-blue) 50%, #fff);
+		--mirai-data-elbow: 38%;
+		display: block;
+		position: absolute;
+		z-index: 1;
+		inset-inline-start: var(--mirai-data-card-x);
+		inset-block-start: calc(var(--mirai-data-screen-top) + var(--mirai-data-line-top));
+		inline-size: calc(var(--mirai-data-nav-x) - var(--mirai-data-card-x));
+		block-size: calc(var(--mirai-data-line-bottom) - var(--mirai-data-line-top));
+		pointer-events: none;
+	}
+
+	.mirai-appraisal-data-connector--year {
+		--mirai-data-line-top: calc(var(--mirai-data-card-height) / 2);
+		--mirai-data-line-bottom: calc(var(--mirai-data-stack-height) * 897 / 1800);
+	}
+
+	.mirai-appraisal-data-connector--settings {
+		--mirai-data-line-top: calc(var(--mirai-data-stack-height) * 973 / 1800);
+		--mirai-data-line-bottom: calc(var(--mirai-data-stack-height) - var(--mirai-data-card-height) / 2);
+	}
+
+	.mirai-appraisal-data-connector::before,
+	.mirai-appraisal-data-connector::after {
+		content: "";
+		position: absolute;
+	}
+
+	.mirai-appraisal-data-connector::before {
+		inset-inline-start: 0;
+		inline-size: var(--mirai-data-elbow);
+		border-block-start: var(--mirai-data-line);
+	}
+
+	.mirai-appraisal-data-connector::after {
+		inset: 0 0 0 var(--mirai-data-elbow);
+		border-inline-start: var(--mirai-data-line);
+	}
+
+	.mirai-appraisal-data-connector--year::before { inset-block-start: 0; }
+	.mirai-appraisal-data-connector--year::after { border-block-end: var(--mirai-data-line); }
+	.mirai-appraisal-data-connector--settings::before { inset-block-end: 0; }
+	.mirai-appraisal-data-connector--settings::after { border-block-start: var(--mirai-data-line); }
+
+	.mirai-appraisal-data-specs,
+	.mirai-appraisal-step .mirai-appraisal-monitor {
+		grid-column: 2;
+		justify-self: start;
+		inline-size: var(--mirai-appraisal-monitor-width);
+		/* Align the visible bezel with the start of the right column. */
+		translate: calc(-100% * 19 / 1398);
+	}
+
+	.mirai-appraisal-data-specs {
+		inline-size: var(--mirai-data-monitor-width);
+		margin-block-start: calc(-1 * var(--mirai-data-monitor-offset));
+		translate: calc(-5cqw - 100% * 19 / 1398);
+	}
+
+	.mirai-appraisal-data-details {
+		grid-area: 1 / 1;
+		justify-self: center;
+		inline-size: calc(var(--mirai-data-crop-height) * 1392 / 920 + 2 * var(--mirai-ui-component-padding));
+		margin-block-start: var(--mirai-data-stack-top);
+	}
+
+	.mirai-appraisal-walkthrough {
+		--mirai-appraisal-monitor-start: 40cqw;
+		--mirai-appraisal-gutter: max(var(--case-gutter), calc((100cqw - var(--case-max-width)) / 2));
+	}
+
+	.mirai-mockup .mirai-appraisal-step,
+	.mirai-appraisal-data-screens {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		inline-size: 100cqw;
+		margin-inline: calc((100% - 100cqw) / 2);
+		overflow-x: clip;
+	}
+
+	.mirai-mockup .mirai-appraisal-step {
+		grid-template-columns: var(--mirai-appraisal-monitor-start) minmax(0, 1fr);
+	}
+}
+
+@media (width >= 64rem) {
+	.mirai-appraisal-automation-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.mirai-appraisal-automation-list > li:is(:nth-child(8n + 2), :nth-child(8n + 4), :nth-child(8n + 5), :nth-child(8n + 7)) {
+		--mirai-automation-icon: currentColor;
+		background: var(--mirai-primary-blue);
+		color: #fff;
+	}
+
+	.mirai-appraisal-walkthrough {
+		--mirai-appraisal-details-edge: 48cqw;
+		--mirai-appraisal-details-width: calc(var(--mirai-appraisal-details-edge) - var(--mirai-appraisal-gutter));
+		--mirai-appraisal-detail-column-gap: 6vw;
+		--mirai-appraisal-detail-title-height: calc(var(--mirai-appraisal-detail-title-size) * 1.25 + var(--ds-space-3));
+		--mirai-appraisal-frame-height: calc((var(--mirai-appraisal-details-width) - 2 * var(--mirai-ui-component-padding)) / var(--mirai-appraisal-panel-aspect) + 2 * var(--mirai-ui-component-padding));
+		/* Place 60% of the first frame above the bottom of the bezel at y=899 in the photo. */
+		--mirai-appraisal-details-top: calc(var(--mirai-appraisal-monitor-width) * 899 / 1398 - var(--mirai-appraisal-frame-height) * 0.6 - var(--mirai-appraisal-detail-title-height));
+		--mirai-appraisal-connector-color: color-mix(in srgb, var(--mirai-primary-blue) 30%, transparent);
+		--mirai-appraisal-connector: 2px dashed var(--mirai-appraisal-connector-color);
+		--mirai-appraisal-start-size: 0.5rem;
+	}
+
+	.mirai-appraisal-step {
+		/* Top center of Confirm Specs in the monitor photo. */
+		--mirai-appraisal-button-x: calc(var(--mirai-appraisal-monitor-start) + var(--mirai-appraisal-monitor-width) * 898 / 1398);
+		--mirai-appraisal-button-y: calc(var(--mirai-appraisal-monitor-width) * 773 / 1398);
+		position: relative;
+	}
+
+	:where(.mirai-appraisal-step, #appraisal-pickup)::before,
+	:where(.mirai-appraisal-step, #appraisal-pickup)::after {
+		content: "";
+		position: absolute;
+		pointer-events: none;
+	}
+
+	:where(.mirai-appraisal-step, #appraisal-pickup)::before {
+		z-index: 1;
+		inset-inline-start: var(--mirai-appraisal-button-x);
+		inset-block-start: var(--mirai-appraisal-button-y);
+		inline-size: var(--mirai-appraisal-start-size);
+		block-size: var(--mirai-appraisal-start-size);
+		border: 2px solid var(--mirai-appraisal-connector-color);
+		border-radius: 50%;
+		translate: -50% 0;
+	}
+
+	.mirai-appraisal-step::before { translate: -50% -100%; }
+
+	.mirai-appraisal-step::after {
+		--mirai-appraisal-connector-rise: calc(var(--mirai-appraisal-monitor-width) * 43 / 1398);
+		inset-inline-start: var(--mirai-appraisal-details-edge);
+		inset-block-start: calc(var(--mirai-appraisal-button-y) - var(--mirai-appraisal-connector-rise));
+		inline-size: calc(var(--mirai-appraisal-button-x) - var(--mirai-appraisal-details-edge) + 1px);
+		block-size: calc(var(--mirai-appraisal-connector-rise) - var(--mirai-appraisal-start-size));
+		border-inline-end: var(--mirai-appraisal-connector);
+		border-block-start: var(--mirai-appraisal-connector);
+		border-start-end-radius: var(--ds-radius-md);
+	}
+
+	.mirai-appraisal-details {
+		position: relative;
+		grid-template-columns: var(--mirai-appraisal-details-width) minmax(0, 1fr);
+		gap: var(--mirai-appraisal-detail-column-gap);
+		inline-size: 100%;
+		margin-inline: 0;
+		margin-block-start: calc(var(--mirai-appraisal-details-top) - var(--mirai-appraisal-monitor-width) * 1125 / 1398 - var(--case-section-space));
+	}
+
+	#appraisal-price {
+		/* Place the price frame in front of the stand at y=966 in the monitor photo. */
+		position: relative;
+		margin-block-start: calc(var(--mirai-appraisal-monitor-width) * 966 / 1398 - var(--mirai-appraisal-details-top));
+	}
+
+	#appraisal-price .case-caption {
+		position: absolute;
+		right: calc(100% + var(--ds-space-3));
+		bottom: var(--mirai-ui-component-padding);
+		margin: 0;
+		padding: 0;
+		writing-mode: vertical-rl;
+		white-space: nowrap;
+	}
+
+	#appraisal-pickup {
+		/* Confirm Surcharges is 1803px from the left and 34px above the bottom of the cropped panel. */
+		--panel-width: calc(100cqw - 2 * var(--mirai-ui-component-padding));
+		--mirai-appraisal-button-x: calc(var(--mirai-ui-component-padding) + var(--panel-width) * 1803 / 2020);
+		--mirai-appraisal-button-y: calc(100% - var(--mirai-ui-component-padding) - var(--panel-width) * 34 / 2020);
+		position: relative;
+		container-type: inline-size;
+	}
+
+	#appraisal-pickup::after {
+		inset-inline-start: calc(var(--mirai-appraisal-button-x) - 1px);
+		inset-block-start: calc(var(--mirai-appraisal-button-y) + var(--mirai-appraisal-start-size));
+		inset-block-end: calc(-1 * var(--ds-space-4));
+		inline-size: calc(100cqw - var(--mirai-appraisal-button-x) + var(--mirai-appraisal-detail-column-gap) + 1px);
+		border-inline-start: var(--mirai-appraisal-connector);
+		border-block-end: var(--mirai-appraisal-connector);
+		border-end-start-radius: var(--ds-radius-md);
+	}
+}

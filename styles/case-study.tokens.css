@@ -1,0 +1,98 @@
+/* Portfolio theme values for the shared design-system roles. */
+:where([data-ds-theme="portfolio-dark"], [data-ds-theme="portfolio-light"]) {
+	--ds-space-1: 0.25rem;
+	--ds-space-2: 0.5rem;
+	--ds-space-3: 0.75rem;
+	--ds-space-4: 1rem;
+	--ds-space-6: 1.5rem;
+	--ds-space-8: 2rem;
+	--ds-space-10: 2.5rem;
+	--ds-space-12: 3rem;
+	--ds-radius-md: 0.5rem;
+	--ds-radius-lg: 0.75rem;
+	--ds-radius-xl: 1.5rem;
+	--ds-border-width: 1px;
+	--ds-focus-width: 2px;
+	--ds-focus-offset: 3px;
+	--ds-target-min: 2.75rem;
+	--ds-type-caption: 0.8125rem;
+	--ds-type-label: 0.875rem;
+	--ds-type-body: 1rem;
+	--ds-type-lead: clamp(1.125rem, 1rem + 0.75vw, 1.625rem);
+	--ds-type-title: clamp(2.625rem, 0.8rem + 5.9vw, 6.5rem);
+	--ds-type-heading: clamp(1.875rem, 1.35rem + 2vw, 3.75rem);
+	--ds-leading-body: 1.65;
+	--ds-leading-heading: 1.08;
+	--ds-weight-label: 600;
+	--ds-weight-strong: 700;
+	--case-gutter: clamp(1.125rem, 4vw, 4.5rem);
+	--case-column-gap: clamp(1.5rem, 5vw, 5.375rem);
+	--case-section-space: clamp(2.75rem, 6vw, 5.375rem);
+	--case-hero-space: clamp(1.75rem, 4.5vw, 4rem);
+	--case-stage-padding: clamp(0.75rem, 3vw, 2.75rem);
+	--case-reading-width: 62ch;
+	--case-figure-width: 63.75rem;
+	--case-card-list-gap: 6.25rem;
+	--case-card-thumbnail-radius: 0.625rem;
+	--case-card-radius-mobile: 1.25rem;
+	--case-card-title-size: 1.5rem;
+	--case-card-title-size-mobile: 1.375rem;
+	--case-action-height: 3.5rem;
+	--case-action-font-size: 1.25rem;
+	--case-action-font-weight: 500;
+	--case-action-icon-size: 1.5rem;
+}
+
+:where([data-ds-theme="portfolio-dark"]) {
+	color-scheme: dark;
+	--ds-bg-canvas: #1c1c1c;
+	--ds-bg-surface: #232323;
+	--ds-bg-surface-muted: #151515;
+	--ds-text-primary: #fff;
+	--ds-text-muted: #c7c7c7;
+	--ds-border-subtle: #414141;
+	--ds-border-strong: #888;
+	--ds-action-primary: #4cec8c;
+	--ds-action-primary-hover: #88f4b4;
+	--ds-border-focus: var(--ds-action-primary);
+	--ds-shadow-raised: 0 18px 38px -19px rgb(0 0 0 / 0.75);
+	--case-card-bg: rgb(255 255 255 / 0.03);
+	--case-card-thumbnail-bg: rgb(21 21 21 / 0.4);
+	--case-card-hover-shadow: 0 20px 100px rgb(0 0 0 / 0.5);
+	--case-action-bg: #88e796;
+	--case-action-fg: #000;
+	--case-action-hover-shadow: 0 8px 56px rgb(136 231 150 / 0.3);
+	--ds-font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
+	--ds-font-display: var(--ds-font-body);
+	--case-display-weight: 600;
+	--case-display-tracking: -0.055em;
+	--case-heading-tracking: -0.04em;
+	--case-max-width: 75rem;
+}
+
+:where([data-ds-theme="portfolio-light"]) {
+	color-scheme: light;
+	--ds-bg-canvas: #faf9f6;
+	--ds-bg-surface: #fff;
+	--ds-bg-surface-muted: #e7eaee;
+	--ds-text-primary: #171816;
+	--ds-text-muted: #545650;
+	--ds-border-subtle: #d9d8d0;
+	--ds-border-strong: #767871;
+	--ds-action-primary: #294da7;
+	--ds-action-primary-hover: #1b3884;
+	--ds-border-focus: var(--ds-action-primary);
+	--ds-shadow-raised: 0 18px 38px -19px rgb(23 24 22 / 0.38);
+	--case-card-bg: var(--ds-bg-surface);
+	--case-card-thumbnail-bg: var(--ds-bg-surface-muted);
+	--case-card-hover-shadow: 0 20px 100px rgb(23 24 22 / 0.14);
+	--case-action-bg: var(--ds-action-primary);
+	--case-action-fg: #fff;
+	--case-action-hover-shadow: 0 8px 56px rgb(41 77 167 / 0.25);
+	--ds-font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+	--ds-font-display: "Instrument Serif", Georgia, serif;
+	--case-display-weight: 400;
+	--case-display-tracking: -0.06em;
+	--case-heading-tracking: -0.045em;
+	--case-max-width: 77.5rem;
+}

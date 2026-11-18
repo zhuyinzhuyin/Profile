@@ -1,0 +1,235 @@
+.mirai-mockup {
+	--mirai-cover-bg: #111419;
+	--mirai-primary-blue: #1761e8;
+	--mirai-cover-edge: clamp(var(--ds-space-4), 5vw, 6rem);
+	display: flex;
+	min-height: 100svh;
+	flex-direction: column;
+	background: var(--mirai-cover-bg);
+}
+
+.mirai-mockup > .nav { position: sticky; }
+.mirai-mockup > .case-skip-link { z-index: 1000; }
+
+.mirai-mockup > main,
+.mirai-mockup .case-hero,
+.mirai-mockup .case-figure {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.mirai-mockup .case-hero { padding: 0; }
+
+.mirai-cover {
+	--mirai-photo-blend: 1.7vw;
+	--mirai-desk-blend: 2vw;
+	--mirai-desk-extension: clamp(4.5rem, 7.5vw, 10rem);
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	border-radius: 0;
+	padding: 0;
+	background: var(--mirai-cover-bg);
+}
+
+.mirai-cover::after {
+	content: "";
+	position: relative;
+	flex: none;
+	width: 100%;
+	height: calc(var(--mirai-desk-extension) + var(--mirai-desk-blend));
+	margin-top: calc(-1 * var(--mirai-desk-blend));
+	background: url("../images/mirai-nexus/hero-desk-extension.webp") center / 100% 100% no-repeat;
+	mask-image: linear-gradient(transparent, black var(--mirai-desk-blend));
+	pointer-events: none;
+}
+
+.mirai-intro {
+	position: relative;
+	isolation: isolate;
+	box-sizing: border-box;
+	width: 100%;
+	padding-block: clamp(var(--ds-space-8), 3vw, var(--ds-space-12)) var(--ds-space-4);
+	padding-inline: max(var(--mirai-cover-edge), calc((100% - var(--case-max-width)) / 2));
+	text-align: center;
+}
+
+.mirai-intro::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 calc(-1 * var(--mirai-photo-blend));
+	z-index: -1;
+	background: url("../images/mirai-nexus/hero-vertical-texture.webp") center / 100% 100% no-repeat;
+	mask-image: linear-gradient(black 68%, transparent);
+	opacity: 0.78;
+}
+
+.mirai-project-name {
+	margin-bottom: var(--ds-space-2);
+	color: var(--mirai-primary-blue);
+	font-size: clamp(1.1875rem, 1.65vw, 1.5rem);
+	font-weight: var(--ds-weight-strong);
+}
+
+.mirai-mockup .case-title {
+	margin-inline: auto;
+	color: var(--ds-text-primary);
+	font-size: clamp(2rem, 4.45vw, 4.25rem);
+}
+
+.mirai-mockup .case-lead {
+	max-width: 62ch;
+	margin: var(--ds-space-3) auto 0;
+	padding: 0;
+	color: var(--ds-text-muted);
+	font-size: clamp(0.9375rem, 1.26vw, 1.125rem);
+	line-height: 1.55;
+}
+
+.mirai-device-scene {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.mirai-device-photo {
+	display: block;
+	width: 100%;
+	height: auto;
+	/* Blend only the empty strip above the monitor. */
+	mask-image: linear-gradient(to bottom, transparent, black var(--mirai-photo-blend));
+}
+
+.mirai-screen-window {
+	position: absolute;
+	inset: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.mirai-screen-window img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transform-origin: top left;
+}
+
+.mirai-ui-card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: grid;
+	place-items: center;
+	width: min(44%, 38rem);
+	visibility: hidden;
+	overflow: hidden;
+	isolation: isolate;
+	border-radius: 7% / 10%;
+	transform-origin: top left;
+	pointer-events: none;
+}
+
+.mirai-glass-material {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	max-width: none;
+	height: auto;
+	transform-origin: top left;
+}
+
+.mirai-card-content {
+	position: relative;
+	display: block;
+	width: 92%;
+	height: auto;
+	clip-path: inset(4% 3%);
+	mix-blend-mode: multiply;
+}
+
+.mirai-mockup .case-caption {
+	padding: 0 var(--mirai-cover-edge) var(--ds-space-2);
+	align-items: center;
+}
+
+.mirai-capabilities {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--ds-space-6);
+	margin-block-start: -4.75rem;
+	padding: var(--ds-space-6) clamp(var(--ds-space-4), 3vw, var(--ds-space-10));
+	border: var(--ds-border-width) solid rgb(255 255 255 / 0.22);
+	border-radius: var(--ds-radius-xl);
+	background: var(--mirai-primary-blue);
+	color: var(--ds-text-primary);
+	box-shadow: inset 0 1px rgb(255 255 255 / 0.09), var(--ds-shadow-raised);
+}
+
+.mirai-capabilities dt {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--ds-space-3);
+	color: inherit;
+	font-size: clamp(1.125rem, 1.55vw, 1.375rem);
+	font-weight: var(--ds-weight-strong);
+	line-height: 1.35;
+}
+
+.mirai-capability-icon {
+	flex: none;
+	width: 1.25em;
+	height: 1.25em;
+}
+
+.mirai-capabilities dd {
+	margin-block-start: var(--ds-space-2);
+	font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+	line-height: 1.5;
+}
+
+.mirai-capabilities > div + div {
+	padding-inline-start: var(--ds-space-6);
+	border-inline-start: var(--ds-border-width) solid rgb(255 255 255 / 0.25);
+}
+
+.mirai-image-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 var(--ds-space-4);
+}
+
+.mirai-image-links a {
+	gap: var(--ds-space-1);
+	color: var(--ds-text-primary);
+}
+
+.mirai-image-links a:hover { color: var(--ds-text-muted); }
+
+@media (width < 48rem) {
+	.mirai-cover { flex: none; }
+	.mirai-mockup .case-title { font-size: clamp(1.375rem, 7vw, 2.125rem); }
+
+	.mirai-capabilities {
+		grid-template-columns: minmax(0, 1fr);
+		margin-block-start: -4rem;
+		gap: var(--ds-space-3);
+		padding: var(--ds-space-4);
+	}
+
+	.mirai-capabilities > div + div {
+		padding: var(--ds-space-3) 0 0;
+		border-inline-start: 0;
+		border-block-start: var(--ds-border-width) solid rgb(255 255 255 / 0.25);
+	}
+}
+
+@media (width < 28rem) {
+	.mirai-mockup .case-caption { align-items: flex-start; }
+}
