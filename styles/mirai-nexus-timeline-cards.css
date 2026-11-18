@@ -903,8 +903,10 @@ html[data-mirai-reloading] > body { visibility: hidden; }
 		/* Menu anchors are measured against the 2880 × 1800 screenshot. */
 		--mirai-data-nav-x: calc(45cqw + var(--mirai-data-monitor-width) * (39 - 19 + 1324 * 73 / 2880) / 1398);
 		--mirai-data-card-x: calc(25cqw + var(--mirai-data-crop-height) * 1392 / 1840);
-		--mirai-data-line: 2px dashed color-mix(in srgb, var(--mirai-primary-blue) 50%, #fff);
+		--mirai-data-line-width: 2px;
+		--mirai-data-line: var(--mirai-data-line-width) dashed color-mix(in srgb, var(--mirai-primary-blue) 30%, #fff);
 		--mirai-data-elbow: 38%;
+		--mirai-data-elbow-radius: 8px;
 		display: block;
 		position: absolute;
 		z-index: 1;
@@ -929,23 +931,44 @@ html[data-mirai-reloading] > body { visibility: hidden; }
 	.mirai-appraisal-data-connector::after {
 		content: "";
 		position: absolute;
+		box-sizing: border-box;
+		block-size: 50%;
 	}
 
 	.mirai-appraisal-data-connector::before {
 		inset-inline-start: 0;
-		inline-size: var(--mirai-data-elbow);
-		border-block-start: var(--mirai-data-line);
+		inline-size: calc(var(--mirai-data-elbow) + var(--mirai-data-line-width));
+		border-inline-end: var(--mirai-data-line);
 	}
 
 	.mirai-appraisal-data-connector::after {
-		inset: 0 0 0 var(--mirai-data-elbow);
+		inset-inline: var(--mirai-data-elbow) 0;
 		border-inline-start: var(--mirai-data-line);
 	}
 
-	.mirai-appraisal-data-connector--year::before { inset-block-start: 0; }
-	.mirai-appraisal-data-connector--year::after { border-block-end: var(--mirai-data-line); }
-	.mirai-appraisal-data-connector--settings::before { inset-block-end: 0; }
-	.mirai-appraisal-data-connector--settings::after { border-block-start: var(--mirai-data-line); }
+	.mirai-appraisal-data-connector--year::before {
+		inset-block-start: 0;
+		border-block-start: var(--mirai-data-line);
+		border-start-end-radius: var(--mirai-data-elbow-radius);
+	}
+
+	.mirai-appraisal-data-connector--year::after {
+		inset-block-end: 0;
+		border-block-end: var(--mirai-data-line);
+		border-end-start-radius: var(--mirai-data-elbow-radius);
+	}
+
+	.mirai-appraisal-data-connector--settings::before {
+		inset-block-end: 0;
+		border-block-end: var(--mirai-data-line);
+		border-end-end-radius: var(--mirai-data-elbow-radius);
+	}
+
+	.mirai-appraisal-data-connector--settings::after {
+		inset-block-start: 0;
+		border-block-start: var(--mirai-data-line);
+		border-start-start-radius: var(--mirai-data-elbow-radius);
+	}
 
 	.mirai-appraisal-data-specs,
 	.mirai-appraisal-step .mirai-appraisal-monitor {
