@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-ds-theme="portfolio-dark">
 <head>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-W1R6TX0J5D"></script>
@@ -12,14 +12,19 @@
 	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Case Study - imagineAPP</title>
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
-	<script src="scripts/site.js" defer></script>
+	<meta name="description" content="imagineAPP. Simplifying AI music video creation through product design, prototyping and iteration.">
+	<title>imagineAPP | Yin Zhu</title>
+	<link rel="canonical" href="https://yinzhudesign.com/case_study_imagineapp.html">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Caveat+Brush&family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mynerve&family=Satisfy&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Oooh+Baby&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/case-study.tokens.css">
+	<link rel="stylesheet" href="styles/case-study.css">
+	<link rel="stylesheet" href="styles/imagineapp.css?v=a8daa00f">
+	<script src="scripts/site.js" defer></script>
+	<script src="scripts/imagineapp.js?v=52d558ed" defer></script>
 	<!-- OpenReplay Tracking Code for my first project -->
 	<script>
 	  var initOpts = {
@@ -45,11 +50,27 @@
 	  })("//static.openreplay.com/latest/openreplay.js",1,0,initOpts,startOpts);
 	</script>
 </head>
-<body>
-	<div class="nav">
+<body class="case-page imagine-case-study" id="page-top" tabindex="-1">
+    <a class="case-skip-link" href="#case-study">Skip to case study</a>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="imagine-media-grade" color-interpolation-filters="sRGB">
+                <feColorMatrix type="saturate" values="0.78"/>
+                <!-- Cool cinematic white balance; preserve black levels without a blue overlay. -->
+                <feComponentTransfer>
+                    <feFuncR type="linear" slope="0.9" intercept="0"/>
+                    <feFuncG type="linear" slope="0.97" intercept="0"/>
+                    <feFuncB type="linear" slope="1.08" intercept="0"/>
+                    <feFuncA type="identity"/>
+                </feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
+    <div class="imagine-page">
+	<header class="nav">
 		<div class="wrap">
 			<div class="left">
-				<a class="logo" href="https://yinzhudesign.com"><img src="images/yinzhu_design_logo.svg"></a>
+				<a class="logo" href="index.html"><img src="images/yinzhu_design_logo.svg" alt="Yin Zhu home"></a>
 				<button class="nav_toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
 					<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
 				</button>
@@ -66,312 +87,414 @@
 				</nav>
 			</div>
 			<div class="right social_links">
-				<a href="https://github.com/zhuyinzhuyin" target="_blank">
+				<a href="https://github.com/zhuyinzhuyin" target="_blank" rel="noopener" aria-label="GitHub">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
 					  <path d="M15.9974 2.85181C14.2464 2.85181 12.5126 3.19668 10.8949 3.86675C9.27728 4.53681 7.80742 5.51894 6.56931 6.75705C4.06882 9.25753 2.66406 12.6489 2.66406 16.1851C2.66406 22.0785 6.49073 27.0785 11.7841 28.8518C12.4507 28.9585 12.6641 28.5451 12.6641 28.1851C12.6641 27.8785 12.6641 27.0385 12.6641 25.9318C8.97073 26.7318 8.18406 24.1451 8.18406 24.1451C7.57073 22.5985 6.70406 22.1851 6.70406 22.1851C5.49073 21.3585 6.7974 21.3851 6.7974 21.3851C8.13073 21.4785 8.8374 22.7585 8.8374 22.7585C9.9974 24.7851 11.9574 24.1851 12.7174 23.8651C12.8374 22.9985 13.1841 22.4118 13.5574 22.0785C10.5974 21.7451 7.49073 20.5985 7.49073 15.5185C7.49073 14.0385 7.9974 12.8518 8.86406 11.9051C8.73073 11.5718 8.26406 10.1851 8.9974 8.38514C8.9974 8.38514 10.1174 8.02514 12.6641 9.74514C13.7174 9.45181 14.8641 9.30514 15.9974 9.30514C17.1307 9.30514 18.2774 9.45181 19.3307 9.74514C21.8774 8.02514 22.9974 8.38514 22.9974 8.38514C23.7307 10.1851 23.2641 11.5718 23.1307 11.9051C23.9974 12.8518 24.5041 14.0385 24.5041 15.5185C24.5041 20.6118 21.3841 21.7318 18.4107 22.0651C18.8907 22.4785 19.3307 23.2918 19.3307 24.5318C19.3307 26.3185 19.3307 27.7585 19.3307 28.1851C19.3307 28.5451 19.5441 28.9718 20.2241 28.8518C25.5174 27.0651 29.3307 22.0785 29.3307 16.1851C29.3307 14.4342 28.9859 12.7004 28.3158 11.0827C27.6457 9.46502 26.6636 7.99516 25.4255 6.75705C24.1874 5.51894 22.7175 4.53681 21.0998 3.86675C19.4822 3.19668 17.7484 2.85181 15.9974 2.85181Z"/>
 					</svg>
 				</a>
-			<a href="https://www.linkedin.com/in/yin-zhu-designer" target="_blank">
+			<a href="https://www.linkedin.com/in/yin-zhu-designer" target="_blank" rel="noopener" aria-label="LinkedIn">
 				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
 				  <path d="M25.3333 4.18506C26.0406 4.18506 26.7189 4.46601 27.219 4.96611C27.719 5.4662 28 6.14448 28 6.85173V25.5184C28 26.2256 27.719 26.9039 27.219 27.404C26.7189 27.9041 26.0406 28.1851 25.3333 28.1851H6.66667C5.95942 28.1851 5.28115 27.9041 4.78105 27.404C4.28095 26.9039 4 26.2256 4 25.5184V6.85173C4 6.14448 4.28095 5.4662 4.78105 4.96611C5.28115 4.46601 5.95942 4.18506 6.66667 4.18506H25.3333ZM24.6667 24.8517V17.7851C24.6667 16.6323 24.2087 15.5267 23.3936 14.7115C22.5784 13.8963 21.4728 13.4384 20.32 13.4384C19.1867 13.4384 17.8667 14.1317 17.2267 15.1717V13.6917H13.5067V24.8517H17.2267V18.2784C17.2267 17.2517 18.0533 16.4117 19.08 16.4117C19.5751 16.4117 20.0499 16.6084 20.3999 16.9585C20.75 17.3085 20.9467 17.7833 20.9467 18.2784V24.8517H24.6667ZM9.17333 11.5984C9.76742 11.5984 10.3372 11.3624 10.7573 10.9423C11.1773 10.5222 11.4133 9.95248 11.4133 9.35839C11.4133 8.11839 10.4133 7.10506 9.17333 7.10506C8.57571 7.10506 8.00257 7.34246 7.57999 7.76504C7.1574 8.18763 6.92 8.76077 6.92 9.35839C6.92 10.5984 7.93333 11.5984 9.17333 11.5984ZM11.0267 24.8517V13.6917H7.33333V24.8517H11.0267Z"/>
 				</svg>
 			</a>
-			<a href="mailto:yinz.work@gmail.com">
+			<a href="mailto:yinz.work@gmail.com" aria-label="Email Yin Zhu">
 				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
 				  <path d="M26.6641 10.8516L15.9974 17.5183L5.33073 10.8516V8.18498L15.9974 14.8516L26.6641 8.18498V10.8516ZM26.6641 5.51831H5.33073C3.85073 5.51831 2.66406 6.70498 2.66406 8.18498V24.185C2.66406 24.8922 2.94501 25.5705 3.44511 26.0706C3.94521 26.5707 4.62349 26.8516 5.33073 26.8516H26.6641C27.3713 26.8516 28.0496 26.5707 28.5497 26.0706C29.0498 25.5705 29.3307 24.8922 29.3307 24.185V8.18498C29.3307 6.70498 28.1307 5.51831 26.6641 5.51831Z"/>
 				</svg>
 			</a>
-			</div>
-		</div>
-	</div>
-	<div class="nav_scrim" aria-hidden="true"></div>
-	<header class="detail_page">
-		<div class="case_banner"></div>
-		<div class="mockup_video">
-			<div class="video">
-				<video loop autoplay muted playsinline><source src="images/prototype.webm" type="video/webm"></video>
 			</div>
 		</div>
 	</header>
-	<section>
-		<article>
-			<div class="abstraction">
-				<div class="title">
-					<h1>imagineAPP</h1>
-					<a href="https://imagineapp.co" rel="nofollow">
-						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
-						  <path d="M25.3333 25.8084H6.66667V7.14176H16V4.4751H6.66667C5.18667 4.4751 4 5.6751 4 7.14176V25.8084C4 26.5157 4.28095 27.194 4.78105 27.694C5.28115 28.1941 5.95942 28.4751 6.66667 28.4751H25.3333C26.0406 28.4751 26.7189 28.1941 27.219 27.694C27.719 27.194 28 26.5157 28 25.8084V16.4751H25.3333V25.8084Z"/>
-						  <path d="M18.7132 4.4751V7.14176H23.4999L15.7266 14.9151L17.6066 16.7951L25.3799 9.02176V13.8084H28.0466V4.4751H18.7132Z"/>
-						</svg>
-					</a>
-				</div>
-				<div class="detail_page_info">
-					<div class="item">
-						<div class="name">My role</div>
-						<div class="description">UI/UX designer, Project manager</div>
-					</div>
-					<div class="item">
-						<div class="name">Timeline</div>
-						<div class="description">Jun, 2022 - Now</div>
-					</div>
-					<div class="item">
-						<div class="name">Tools</div>
-						<div class="tools">
-							<img src="images/figma_logo.svg">
-							<img src="images/Adobe_Photoshop_CC_icon.svg">
-							<img src="images/Adobe_Illustrator_CC_icon.svg">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="article_h2">
-				<span><img src="images/article.svg"></span>
-				<h2>Project Overview</h2>
-			</div>
-			<p>
-				ImagineAPP is a creator-focused platform launched in 2022, dedicated to empowering artists in the AIGC (AI-generated content) space. The platform offers a seamless experience for image and video generation—and most notably—an exclusive Auto AI Music Video Maker.
-			</p>
-			<p>
-				As the sole UI/UX designer on the team, I was responsible for the entire end-to-end design process. This included task flow design, wireframing, prototyping, high-fidelity UI, usability testing, and post-launch iterations.
-			</p>
-			<div class="design_list">
-				<div class="item">
-					<a class="thumbnail" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-3999" target="_blank">
-						<img src="images/imagineapp_desktop_design.webp">
-					</a>
-					<div class="name">Desktop UI designs</div>
-					<a class="button" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-3999" target="_blank">
-						<span>View in Figma</span>
-						<span class="download">
-							<img src="images/open-in-new.svg">
-						</span>
-					</a>
-				</div>
-				<div class="item">
-					<a class="thumbnail" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-43874" target="_blank">
-						<img src="images/imagineapp_mobile_responsive.webp">
-					</a>
-					<div class="name">Mobile web responsive</div>
-					<a class="button" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-43874" target="_blank">
-						<span>View in Figma</span>
-						<span class="download">
-							<img src="images/open-in-new.svg">
-						</span>
-					</a>
-				</div>
-				<div class="item">
-					<a class="thumbnail" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-51742" target="_blank">
-						<img src="images/imagineapp_app_design.webp">
-					</a>
-					<div class="name">APP design</div>
-					<a class="button" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-51742" target="_blank">
-						<span>View in Figma</span>
-						<span class="download">
-							<img src="images/open-in-new.svg">
-						</span>
-					</a>
-				</div>
-			</div>
-			<div class="article_h2">
-				<span><img src="images/target.svg"></span>
-				<h2>Case Study: Auto AI Music Video Maker</h2>
-			</div>
-			<h3>1. Problem</h3>
-			<p>
-				Despite the rise of AIGC tools, there's a significant usability gap for creators—especially musicians and indie artists—who lack technical backgrounds. Creating an AI-generated music video typically takes days and requires multiple tools, manual prompt tuning, and video editing knowledge.
-			</p>
-			<p>
-				Our user survey revealed:
-			</p>
-			<ul>
-				<li>
-					Creating a single AI music video takes <b>~1 week of human effort</b>.
-				</li>
-				<li>
-					Artists and labels often have <b>large music catalogs</b> in need of video content.
-				</li>
-				<li>
-					The global music market was valued at <b>$10.69B in 2022</b>, with a projected <b>CAGR of 7.20%</b> (2022–2029)—a massive opportunity for scalable, automated video creation.
-				</li>
-			</ul>
-			<h3>2. Solution</h3>
-			<p>
-				We developed an <b>all-in-one AI music video maker</b> that empowers artists to generate music videos by simply describing what they want—no technical skills required. Our tool bridges multiple AI models and complex workflows into one cohesive, intuitive, and effective user experience.
-			</p>
-			<div class="article_h2">
-				<span><img src="images/schema.svg"></span>
-				<h2>My Design Workflow</h2>
-			</div>
-			<h3>1. Task Flow Design</h3>
-			<ul>
-				<li>
-					Analyzed user and market research (provided by team researchers).
-				</li>
-				<li>
-					Designed a task flow optimized for minimal user input and maximal creative output.
-				</li>
-				<li>
-					Collaborated with frontend/backend engineers, CTO, and CEO for feasibility reviews.
-				</li>
-				<li>
-					Iteratively refined the flow based on internal testing and user feedback.
-				</li>
-			</ul>
-			<p>
-				<img class="article_image" src="images/task_flow.webp">
-			</p>
-			<h3>2. Wireframing</h3>
-			<ul>
-				<li>
-					Sketched wireframes to establish the UI structure and interaction points.
-				</li>
-				<li>
-					Defined necessary content blocks and user inputs required at each step.
-				</li>
-			</ul>
-			<div class="wireframe_list">
-				<img class="article_image" src="images/wireframe01.webp">
-				<img class="article_image" src="images/wireframe02.webp">
-				<img class="article_image" src="images/wireframe03.webp">
-				<img class="article_image" src="images/wireframe04.webp">
-				<img class="article_image" src="images/wireframe05.webp">
-				<img class="article_image" src="images/wireframe06.webp">
-			</div>
-			<h3>3. UI Design, User Flow & Prototyping</h3>
-			<ul>
-				<li>
-					Designed high-fidelity UI screens.
-				</li>
-				<li>
-					Developed a consistent design system to streamline handoff and scalability.
-				</li>
-				<li>
-					Created interactive prototypes to explain UX decisions to stakeholders and engineers.
-				</li>
-			</ul>
-			<p>
-				<img class="article_image" src="images/ui_design.webp">
-			</p>
-			<p>
-				<a class="button" href="https://www.figma.com/design/KJNdDKKaW9FhkULkO2IzeT/ImagineAPP---Yin-Zhu-s-Portfolio?node-id=2-10102&t=xXpEMgAVFOw2bXqz-4" target="_blank">
-					<span>View in Figma</span>
-					<span class="download">
-						<img src="images/open-in-new.svg">
-					</span>
-				</a>
-			</p>
-			<p>
-				<img class="article_image" src="images/components.webp">
-			</p>
-			<h3>4. Development Support</h3>
-			<ul>
-				<li>
-					Reviewed staging and production environments to ensure design fidelity.
-				</li>
-				<li>
-					Filed and tracked UI/UX issues via GitHub and coordinated with engineers.
-				</li>
-				<li>
-					Provided ongoing feedback during sprints to align frontend execution with UX goals.
-				</li>
-			</ul>
-			<p>
-				<img class="article_image" src="images/github_detail.webp">
-			</p>
-			<p>
-				<a class="button" href="https://github.com/zhuyinzhuyin" target="_blank">
-					<span class="download">
-						<img src="images/github_black.svg">
-					</span>
-					<span>View my GitHub</span>
-					<span class="download">
-						<img src="images/open-in-new.svg">
-					</span>
-				</a>
-			</p>
-			<h3>5. Data Analytics</h3>
-			<ul>
-				<li>
-					Monitored user behavior using Amplitude, OpenReplay, and Google Analytics.
-				</li>
-				<li>
-					Identified drop-off points, feature adoption rates, and UI engagement patterns.
-				</li>
-				<li>
-					Used insights to inform design optimizations.
-				</li>
-			</ul>
-			<p class="pt_24">
-				<b>Tools</b>
-			</p>
-			<div class="inline_icons">
-				<img src="images/amplitude.svg">
-				<img src="images/google_analytics.svg">
-				<img src="images/openreplay.svg">
-			</div>
-			<p class="pt_24">
-				<b>Reports</b>
-			</p>
-			<div class="reports_list">
-				<img src="images/report01.webp">
-				<img src="images/report02.webp">
-				<img src="images/report03.webp">
-				<img src="images/report04.webp">
-				<img src="images/report05.webp">
-				<img src="images/report06.webp">
-				<img src="images/report07.webp">
-				<img src="images/report08.webp">
-				<img src="images/report09.webp">
-				<img src="images/report10.webp">
-				<img src="images/report11.webp">
-				<img src="images/report12.webp">
-			</div>
-			<h3>6. Iteration & Optimization</h3>
-			<ul>
-				<li>
-					Regularly iterated UI based on user feedback and analytics insights.
-				</li>
-				<li>
-					Proposed and implemented UX improvements to increase user retention and conversion rates.
-				</li>
-				<li>
-					Maintained and evolved the UI across product updates.
-				</li>
-			</ul>
-			<div class="article_h2">
-				<span><img src="images/monitoring.svg"></span>
-				<h2>Results</h2>
-			</div>
-			<ul>
-				<li>
-					Enabled music video creation time to drop <b>from ~7 days to under 10 minutes</b> with minimal requirements.
-				</li>
-				<li>
-					Increased engagement from non-technical users by simplifying complex AI workflows.
-				</li>
-			</ul>
-		</article>
-	</section>
-	<footer class="mt_64">
-		<div class="logo"><img src="images/yinzhu_icon_footer.svg"></div>
-		<div class="social_list social_links">
-			<a href="https://github.com/zhuyinzhuyin" target="_blank">
-					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
-					  <path d="M15.9974 2.85181C14.2464 2.85181 12.5126 3.19668 10.8949 3.86675C9.27728 4.53681 7.80742 5.51894 6.56931 6.75705C4.06882 9.25753 2.66406 12.6489 2.66406 16.1851C2.66406 22.0785 6.49073 27.0785 11.7841 28.8518C12.4507 28.9585 12.6641 28.5451 12.6641 28.1851C12.6641 27.8785 12.6641 27.0385 12.6641 25.9318C8.97073 26.7318 8.18406 24.1451 8.18406 24.1451C7.57073 22.5985 6.70406 22.1851 6.70406 22.1851C5.49073 21.3585 6.7974 21.3851 6.7974 21.3851C8.13073 21.4785 8.8374 22.7585 8.8374 22.7585C9.9974 24.7851 11.9574 24.1851 12.7174 23.8651C12.8374 22.9985 13.1841 22.4118 13.5574 22.0785C10.5974 21.7451 7.49073 20.5985 7.49073 15.5185C7.49073 14.0385 7.9974 12.8518 8.86406 11.9051C8.73073 11.5718 8.26406 10.1851 8.9974 8.38514C8.9974 8.38514 10.1174 8.02514 12.6641 9.74514C13.7174 9.45181 14.8641 9.30514 15.9974 9.30514C17.1307 9.30514 18.2774 9.45181 19.3307 9.74514C21.8774 8.02514 22.9974 8.38514 22.9974 8.38514C23.7307 10.1851 23.2641 11.5718 23.1307 11.9051C23.9974 12.8518 24.5041 14.0385 24.5041 15.5185C24.5041 20.6118 21.3841 21.7318 18.4107 22.0651C18.8907 22.4785 19.3307 23.2918 19.3307 24.5318C19.3307 26.3185 19.3307 27.7585 19.3307 28.1851C19.3307 28.5451 19.5441 28.9718 20.2241 28.8518C25.5174 27.0651 29.3307 22.0785 29.3307 16.1851C29.3307 14.4342 28.9859 12.7004 28.3158 11.0827C27.6457 9.46502 26.6636 7.99516 25.4255 6.75705C24.1874 5.51894 22.7175 4.53681 21.0998 3.86675C19.4822 3.19668 17.7484 2.85181 15.9974 2.85181Z"/>
-					</svg>
-				</a>
-			<a href="https://www.linkedin.com/in/yin-zhu-designer" target="_blank">
-				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
-				  <path d="M25.3333 4.18506C26.0406 4.18506 26.7189 4.46601 27.219 4.96611C27.719 5.4662 28 6.14448 28 6.85173V25.5184C28 26.2256 27.719 26.9039 27.219 27.404C26.7189 27.9041 26.0406 28.1851 25.3333 28.1851H6.66667C5.95942 28.1851 5.28115 27.9041 4.78105 27.404C4.28095 26.9039 4 26.2256 4 25.5184V6.85173C4 6.14448 4.28095 5.4662 4.78105 4.96611C5.28115 4.46601 5.95942 4.18506 6.66667 4.18506H25.3333ZM24.6667 24.8517V17.7851C24.6667 16.6323 24.2087 15.5267 23.3936 14.7115C22.5784 13.8963 21.4728 13.4384 20.32 13.4384C19.1867 13.4384 17.8667 14.1317 17.2267 15.1717V13.6917H13.5067V24.8517H17.2267V18.2784C17.2267 17.2517 18.0533 16.4117 19.08 16.4117C19.5751 16.4117 20.0499 16.6084 20.3999 16.9585C20.75 17.3085 20.9467 17.7833 20.9467 18.2784V24.8517H24.6667ZM9.17333 11.5984C9.76742 11.5984 10.3372 11.3624 10.7573 10.9423C11.1773 10.5222 11.4133 9.95248 11.4133 9.35839C11.4133 8.11839 10.4133 7.10506 9.17333 7.10506C8.57571 7.10506 8.00257 7.34246 7.57999 7.76504C7.1574 8.18763 6.92 8.76077 6.92 9.35839C6.92 10.5984 7.93333 11.5984 9.17333 11.5984ZM11.0267 24.8517V13.6917H7.33333V24.8517H11.0267Z"/>
-				</svg>
-			</a>
-			<a href="mailto:yinz.work@gmail.com">
-				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="currentColor">
-				  <path d="M26.6641 10.8516L15.9974 17.5183L5.33073 10.8516V8.18498L15.9974 14.8516L26.6641 8.18498V10.8516ZM26.6641 5.51831H5.33073C3.85073 5.51831 2.66406 6.70498 2.66406 8.18498V24.185C2.66406 24.8922 2.94501 25.5705 3.44511 26.0706C3.94521 26.5707 4.62349 26.8516 5.33073 26.8516H26.6641C27.3713 26.8516 28.0496 26.5707 28.5497 26.0706C29.0498 25.5705 29.3307 24.8922 29.3307 24.185V8.18498C29.3307 6.70498 28.1307 5.51831 26.6641 5.51831Z"/>
-				</svg>
-			</a>
-		</div>
-		<div class="copyright_info">All Rights Reserved <span data-copyright-year data-start-year="2025">2025</span></div>
-	</footer>
+	<div class="nav_scrim" aria-hidden="true"></div>
+
+    <main id="case-study" tabindex="-1">
+        <article class="case-shell" aria-labelledby="case-title">
+            <header class="case-hero imagine-hero">
+                <h1 class="case-title imagine-banner-title" id="case-title">
+                    <span class="imagine-banner-intro">Back in 2023, <span class="imagine-project-name">ImagineAPP</span> was possibly the</span>
+                    <span class="imagine-banner-emphasis">World’s First</span>
+                    <span class="imagine-banner-product">AI Music Video Workspace</span>
+                </h1>
+                <figure class="case-figure imagine-hero-media">
+                    <div class="imagine-monitor-scene">
+                        <div class="imagine-monitor-screen">
+                            <img src="images/imagineapp/landing-background-layer.webp" width="1546" height="1017" alt="imagineAPP’s AI music video creation landing page displayed on a front-facing monitor." decoding="async">
+                        </div>
+                        <img class="imagine-monitor-frame" src="images/imagineapp/black-metal-monitor.webp" width="1536" height="1024" alt="" decoding="async">
+                        <div class="imagine-astronaut">
+                            <img class="imagine-boot-exhaust imagine-boot-exhaust-right" src="images/imagineapp/blue-boot-exhaust-smooth.webp" width="724" height="2172" alt="" aria-hidden="true" decoding="async">
+                            <img class="imagine-astronaut-image" src="images/imagineapp/astronaut-white-guitar-rounded-head.webp" width="1143" height="1376" alt="A floating female astronaut plays a minimal white electric guitar with a flowing asymmetric body, turquoise edge lights and a rounded white headstock with silver tuning keys, with one blue thruster plume at her right heel." fetchpriority="high">
+                        </div>
+                        <div class="imagine-monitor-callout" aria-hidden="true">
+                            <div class="imagine-screen-promotion">
+                                <span class="imagine-screen-headline">Your Music</span>
+                                <span class="imagine-screen-tagline">Brought to Life</span>
+                                <span class="imagine-screen-cta">Get Free Credits Now</span>
+                            </div>
+                        </div>
+                        <div class="imagine-music-showcase">
+                            <img src="images/imagineapp/video-generation-showcase.webp" width="1843" height="1296" alt="imagineAPP video generation workspace showing prompt and model controls, a CogVideoX preview, Vidu and MiniMax generation progress, and a Kling generation error." decoding="async">
+                        </div>
+                        <div class="imagine-phone-showcase">
+                            <div class="imagine-phone-screen">
+                                <img src="images/imagineapp/mobile-creation-showcase.webp" width="848" height="1848" alt="Mobile creation controls for describing an image, selecting Flux.1 Dev, customizing cinematic style, lighting and camera angle, and setting image dimensions and quantity." decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </header>
+
+            <section class="imagine-project-intro" aria-labelledby="project-intro-title">
+                <img class="imagine-project-logo" src="images/imagineapp/imagineapp-logo.webp" width="372" height="84" alt="imagineAPP" decoding="async">
+                <h2 class="case-chapter-title" id="project-intro-title">Designing <span class="imagine-intro-emphasis">Without a Playbook</span></h2>
+                <p>Back in 2023, there were almost no comparable AI music video products to learn from. I defined the workflow from scratch, breaking down the creative process and resolving technical and usability challenges through prototyping and close collaboration with engineers.</p>
+                <div class="imagine-author">
+                    <img class="imagine-author-avatar" src="images/mirai-nexus/structure-draft/yin-avatar.webp" width="840" height="840" alt="Portrait of Yin Zhu" loading="lazy" decoding="async">
+                    <span class="imagine-author-signature">Yin Zhu</span>
+                </div>
+            </section>
+
+            <section class="case-chapter imagine-workspace" id="creation-workspace" aria-label="Music video creation workspace">
+                <svg class="imagine-workspace-guide" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                    <path class="imagine-workspace-guide-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-guide-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-guide-end" fill="currentColor"/>
+                    <path class="imagine-workspace-output-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-output-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-output-end" fill="currentColor"/>
+                    <path class="imagine-workspace-story-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-story-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-story-end" fill="currentColor"/>
+                    <path class="imagine-workspace-direction-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-direction-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-direction-end" fill="currentColor"/>
+                    <path class="imagine-workspace-scripts-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-scripts-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-scripts-end" fill="currentColor"/>
+                    <path class="imagine-workspace-script-copy-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-script-copy-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-script-copy-end" fill="currentColor"/>
+                    <path class="imagine-workspace-story-copy-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-story-copy-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-story-copy-end" fill="currentColor"/>
+                    <path class="imagine-workspace-direction-copy-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-direction-copy-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-direction-copy-end" fill="currentColor"/>
+                    <path class="imagine-workspace-keyframes-copy-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-keyframes-copy-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-keyframes-copy-end" fill="currentColor"/>
+                    <path class="imagine-workspace-clips-copy-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-clips-copy-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-clips-copy-end" fill="currentColor"/>
+                    <path class="imagine-workspace-keyframes-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-keyframes-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-keyframes-end" fill="currentColor"/>
+                    <path class="imagine-workspace-clips-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-clips-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-clips-end" fill="currentColor"/>
+                    <path class="imagine-workspace-final-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="imagine-workspace-final-start" fill="none" stroke="currentColor"/>
+                    <circle class="imagine-workspace-final-end" fill="currentColor"/>
+                </svg>
+                <figure class="case-figure imagine-workspace-figure">
+                    <div class="imagine-workspace-scene" data-screen-corners="129,32 1369,131 1424,778 187,788">
+                        <div class="imagine-workspace-screen">
+                            <img src="images/imagineapp/creation-homepage-2x.webp" width="2880" height="4472" alt="imagineAPP’s creation homepage prioritizes Generate Music Video, with paths for music with or without timestamped lyrics, followed by featured image and video tools." loading="lazy" decoding="async">
+                            <div class="imagine-workspace-toolbar">
+                                <img src="images/imagineapp/creation-toolbar.webp" width="248" height="1848" alt="Left navigation for Home, Video, Image, Chat, Lip Sync, Music Video, Model, Upscale, E-comm and Lyrics Maker." loading="lazy" decoding="async">
+                            </div>
+                            <span class="imagine-workspace-music-anchor" aria-hidden="true"></span>
+                        </div>
+                        <img class="imagine-workspace-frame" src="images/imagineapp/workspace-monitor-angle.webp" width="1536" height="1024" alt="" decoding="async">
+                    </div>
+                </figure>
+                <section class="imagine-task-flow-section" aria-labelledby="imagine-task-flow-title">
+                    <div class="imagine-workspace-lettering" aria-hidden="true">
+                        <span class="imagine-workspace-lettering-left">AI MUSIC VIDEO</span>
+                    </div>
+                    <h2 class="case-chapter-title" id="imagine-task-flow-title"><span class="imagine-task-flow-title-accent">Designing</span> <span class="imagine-task-flow-title-subject">the Music Video Workflow</span></h2>
+                    <p class="imagine-task-flow-intro">I worked with researchers and engineers to design a workflow from song to video, giving creators control over scripts, keyframes and clips along the way.</p>
+                    <ol class="imagine-task-flow" aria-label="Music video creation task flow" role="list">
+                        <li>
+                            <span class="imagine-task-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13M9 9l12-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="18" cy="16" rx="3" ry="3"/></svg>
+                            </span>
+                            <span class="imagine-task-number" aria-hidden="true">01</span>
+                            <div class="imagine-task-tree">
+                                <h3>Add music</h3>
+                                <ul role="list">
+                                    <li>Music title &amp; audio</li>
+                                    <li class="imagine-task-formats">Lyrics <span class="imagine-task-format">.lrc</span> <span class="imagine-task-format">.srt</span></li>
+                                    <li>Artist &amp; tags</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="imagine-task-card--accent">
+                            <span class="imagine-task-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h7m4 0h5M4 17h3m4 0h9"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+                            </span>
+                            <span class="imagine-task-number" aria-hidden="true">02</span>
+                            <div class="imagine-task-tree">
+                                <h3>Set the direction</h3>
+                                <ul role="list">
+                                    <li>Tone &amp; context</li>
+                                    <li>Visual style</li>
+                                    <li>Aspect ratio &amp; video model</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="imagine-task-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H5v18h14V8zM14 3v5h5M8 12h8M8 16h6"/></svg>
+                            </span>
+                            <span class="imagine-task-number" aria-hidden="true">03</span>
+                            <div class="imagine-task-tree">
+                                <h3>Shape the story</h3>
+                                <ul role="list">
+                                    <li>Generate &amp; edit scene scripts</li>
+                                    <li>Image &amp; video prompts</li>
+                                    <li>Characters, places &amp; objects</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="imagine-task-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                            </span>
+                            <span class="imagine-task-number" aria-hidden="true">04</span>
+                            <div class="imagine-task-tree">
+                                <h3>Create keyframes</h3>
+                                <ul role="list">
+                                    <li>Generate scene keyframes</li>
+                                    <li>Regenerate or replace images</li>
+                                    <li>Refine scripts &amp; prompts</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="imagine-task-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3zM3 8h18M7 4v4M17 4v4"/></svg>
+                            </span>
+                            <span class="imagine-task-number" aria-hidden="true">05</span>
+                            <div class="imagine-task-tree">
+                                <h3>Generate clips</h3>
+                                <ul role="list">
+                                    <li>Turn keyframes into video clips</li>
+                                    <li>Remaster or replace clips</li>
+                                    <li>Revisit keyframes &amp; scripts</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="imagine-task-card--accent">
+                            <span class="imagine-task-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 12 3 3 5-6"/></svg>
+                            </span>
+                            <span class="imagine-task-number" aria-hidden="true">06</span>
+                            <div class="imagine-task-tree">
+                                <h3>Finalize the video</h3>
+                                <ul role="list">
+                                    <li>Finalize the music video</li>
+                                    <li>Remaster or replace clips</li>
+                                    <li>Return to earlier editing stages</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+                <div class="imagine-campaign-heading">
+                    <h2 class="imagine-campaign-title" id="imagine-campaign-title"><span>AI Music Video</span> <span class="imagine-campaign-title-gradient">WORKSPACE</span></h2>
+                </div>
+                <div class="imagine-campaign-showcase">
+                    <figure class="case-figure imagine-campaign-display imagine-glass-frame">
+                        <div class="imagine-campaign-screen">
+                            <img class="imagine-campaign-page" src="images/imagineapp/campaign-workspace-updated.webp" width="2880" height="2992" alt="imagineAPP’s MyDayByDay campaign page with an event countdown and a workspace showing music video projects in different generation states." loading="lazy" decoding="async">
+                            <span class="imagine-new-story-anchor" aria-hidden="true"></span>
+                            <img class="imagine-campaign-performer" src="images/imagineapp/mv-campaign-v2/singer-transparent.webp" width="1254" height="1254" alt="Silver-haired virtual singer leaning forward with a microphone and reaching toward the audience." loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <ol class="imagine-keyframe-states" aria-label="Keyframe generation component states" role="list">
+                        <li class="imagine-glass-frame">
+                            <div class="imagine-keyframe-state">
+                                <img src="images/imagineapp/keyframe-states/generating.webp" width="656" height="614" alt="Hotel California card while keyframes are generating, with a loading indicator and partial progress bar." loading="lazy" decoding="async">
+                            </div>
+                        </li>
+                        <li class="imagine-glass-frame">
+                            <div class="imagine-keyframe-state">
+                                <img src="images/imagineapp/keyframe-states/generated.webp" width="656" height="614" alt="Hotel California card after keyframes are generated, showing a portrait preview and updated progress." loading="lazy" decoding="async">
+                            </div>
+                        </li>
+                        <li class="imagine-glass-frame">
+                            <div class="imagine-keyframe-state">
+                                <img src="images/imagineapp/keyframe-states/edit.webp" width="656" height="614" alt="Hotel California card in its edit interaction state, with an Edit button over the dimmed keyframe preview." loading="lazy" decoding="async">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <section class="imagine-story-step" id="new-story-general" aria-label="Add music: New Story general settings">
+                    <figure class="case-figure imagine-story-display imagine-story-monitor">
+                        <img class="imagine-story-monitor-frame" src="images/imagineapp/black-metal-monitor.webp" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+                        <div class="imagine-story-screen">
+                            <img class="imagine-story-page" src="images/imagineapp/new-story-general.webp?v=faa768e9" width="2880" height="1920" alt="New Story General settings for Hotel California, showing title visibility, an uploaded audio waveform with playback and start/end trimming controls, and options to upload, auto-generate or edit lyrics before continuing." loading="lazy" decoding="async">
+                            <span class="imagine-story-next-anchor" aria-hidden="true"></span>
+                            <div class="imagine-story-audio-detail">
+                                <img src="images/imagineapp/audio-track-detail.webp" width="1246" height="400" alt="Audio track controls with a waveform, playback, and a selected range from 00:06.00 to 01:00.00." loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="imagine-step-copy imagine-story-copy">
+                        <h3>Start with music</h3>
+                        <p>Upload a track and lyrics, then select the segment for your music video.</p>
+                    </div>
+                </section>
+                <section class="imagine-direction-step" id="describe-mv" aria-label="Set the video direction and choose a visual style">
+                    <div class="imagine-workspace-lettering" aria-hidden="true"><span class="imagine-workspace-lettering-left">WORKSPACE</span></div>
+                    <figure class="case-figure imagine-direction-display imagine-glass-frame">
+                        <div class="imagine-direction-screen">
+                            <img class="imagine-direction-page" src="images/imagineapp/describe-mv.webp" width="2880" height="1920" alt="The Describe MV tab lets musicians set the story context, request inspiration, choose a visual style and aspect ratio, and create their story." loading="lazy" decoding="async">
+                            <img class="imagine-direction-style-sample" src="images/imagineapp/style-library-v2/01-sci-fi.webp" width="1254" height="1254" alt="" loading="lazy" decoding="async">
+                            <span class="imagine-direction-create-anchor" aria-hidden="true"></span>
+                        </div>
+                    </figure>
+                    <figure class="case-figure imagine-style-dialog">
+                        <div class="imagine-style-dialog-viewport">
+                            <img src="images/imagineapp/choose-style-dialog.webp?v=6cfe7031" width="2094" height="1172" alt="Choose a style dialog comparing twelve treatments of the same musician, with Cinematic selected and a wide coastal railway preview." loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                    <ol class="imagine-style-examples" aria-label="Examples of distinct music video styles" role="list">
+                        <li class="imagine-glass-frame"><img src="images/imagineapp/style-library-v2/07-low-poly.webp" width="1254" height="1254" alt="Low-poly style: a musician and coastal station built from angular geometric facets." loading="lazy" decoding="async"></li>
+                        <li class="imagine-glass-frame"><img src="images/imagineapp/style-library-v2/09-pixar.webp" width="1254" height="1254" alt="Pixar-style feature animation: an expressive musician in a red jacket holding an ivory guitar." loading="lazy" decoding="async"></li>
+                        <li class="imagine-glass-frame"><img src="images/imagineapp/style-library-v2/11-watercolor.webp" width="1254" height="1254" alt="Watercolor style: transparent coral and blue washes with visible paper texture." loading="lazy" decoding="async"></li>
+                        <li class="imagine-glass-frame"><img src="images/imagineapp/style-library-v2/12-blind-box.webp" width="1254" height="1254" alt="Blind-box style: a miniature vinyl musician with a guitar on a coastal station diorama." loading="lazy" decoding="async"></li>
+                    </ol>
+                    <div class="imagine-step-copy">
+                        <h3>Set the direction</h3>
+                        <p>Describe your idea, choose a visual style and set the aspect ratio for your video.</p>
+                    </div>
+                </section>
+                <section class="imagine-scripts-step" id="story-scripts" aria-label="Shape the story with scene scripts and lyrics">
+                    <div class="imagine-workspace-lettering" aria-hidden="true"><span class="imagine-workspace-lettering-right">AI MUSIC VIDEO</span></div>
+                    <figure class="case-figure imagine-scripts-display imagine-glass-frame">
+                        <div class="imagine-scripts-screen">
+                            <img class="imagine-scripts-page" src="images/imagineapp/story-scripts.webp" width="2880" height="1920" alt="Hotel California’s Scripts stage pairs timed keyframe prompts with lyrics, lets musicians refine scene descriptions and transitions, and continues to Create Keyframes." loading="lazy" decoding="async">
+                            <span class="imagine-scripts-create-anchor" aria-hidden="true"></span>
+                        </div>
+                    </figure>
+                    <div class="imagine-step-copy imagine-scripts-copy">
+                        <h3>Shape the story</h3>
+                        <p>Refine scene prompts alongside timed lyrics, and set transitions before creating keyframes.</p>
+                    </div>
+                </section>
+                <section class="imagine-keyframes-step" id="story-keyframes" aria-label="Create and refine scene keyframes">
+                    <div class="imagine-workspace-lettering" aria-hidden="true"><span class="imagine-workspace-lettering-left">WORKSPACE</span></div>
+                    <figure class="case-figure imagine-keyframes-display imagine-glass-frame">
+                        <div class="imagine-keyframes-screen">
+                            <img class="imagine-keyframes-page" src="images/imagineapp/story-keyframes.webp" width="2880" height="1920" alt="The Keyframes stage pairs generated desert, vintage car and driver images with timed lyrics, with scene timing, transitions, an image editing control and the Make Clips action." loading="lazy" decoding="async">
+                            <span class="imagine-keyframes-create-anchor" aria-hidden="true"></span>
+                        </div>
+                    </figure>
+                    <figure class="case-figure imagine-scene-number-strip">
+                        <img src="images/imagineapp/scene-number-strip.webp" width="140" height="731" alt="Scene navigation numbered 1 through 28, with scene 20 selected and a thumbnail preview of the car on a desert road." loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="case-figure imagine-keyframe-dialog">
+                        <div class="imagine-keyframe-dialog-viewport">
+                            <img class="imagine-keyframe-dialog-content" src="images/imagineapp/edit-keyframe-dialog-transparent.webp?v=305bddeb" width="2792" height="1524" alt="Edit keyframe dialog showing Keyframes, Clips, Prompt and Library tabs, generated image alternatives, a selected desert preview and navigation between scenes." loading="lazy" decoding="async">
+                            <div class="imagine-keyframe-dialog-tabs" aria-hidden="true">
+                                <img src="images/imagineapp/edit-keyframe-dialog.webp" width="2856" height="1612" alt="" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="imagine-step-copy">
+                        <h3>Refine every frame</h3>
+                        <p>Compare image options and edit individual keyframes while keeping each scene aligned with the lyrics.</p>
+                    </div>
+                </section>
+                <section class="imagine-clips-step" id="story-clips" aria-label="Generate and review video clips">
+                    <figure class="case-figure imagine-clips-display imagine-glass-frame">
+                        <div class="imagine-clips-screen">
+                            <img class="imagine-clips-page" src="images/imagineapp/story-clips.webp?v=d9d9b682" width="2880" height="1920" alt="The selected Clips stage shows playable desert and driver scenes, a car clip being generated, timed lyrics and transitions, and a prominent Finalize Video action." loading="lazy" decoding="async">
+                            <span class="imagine-clips-finalize-anchor" aria-hidden="true"></span>
+                        </div>
+                    </figure>
+                    <figure class="case-figure imagine-clip-variants">
+                        <img src="images/imagineapp/clip-state-variants.webp" width="1052" height="1676" alt="Four clip component states: selected and ready to play, idle playback, remastering in progress, and a failed generation with a Retry action." loading="lazy" decoding="async">
+                    </figure>
+                    <div class="imagine-step-copy">
+                        <h3>Bring scenes to life</h3>
+                        <p>Generate and preview clips, remaster a take or retry a failed generation before assembling the video.</p>
+                    </div>
+                </section>
+                <section class="imagine-final-step" id="story-final-video" aria-label="Preview and export the completed music video">
+                    <div class="imagine-workspace-lettering" aria-hidden="true"><span class="imagine-workspace-lettering-left">AI MUSIC VIDEO</span></div>
+                    <figure class="case-figure imagine-final-display imagine-glass-frame">
+                        <img class="imagine-final-page" src="images/imagineapp/story-final-video-v2.webp" width="2880" height="1634" alt="Hotel California’s Finalize stage shows the completed desert-road music video beside a history of versions 7 through 4, resolution badges, and download, upscale, captions and sharing controls." loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="case-figure imagine-upscale-dialog">
+                        <div class="imagine-upscale-dialog-viewport">
+                            <img src="images/imagineapp/upscale-dialog-v2.webp" width="956" height="788" alt="Upscale dialog offering 1080P for TikTok and YouTube Shorts or selected 4K for YouTube videos, with a cost of 100 credits and an Upscale action." loading="lazy" decoding="async">
+                        </div>
+                    </figure>
+                </section>
+            </section>
+
+            <section class="case-chapter imagine-showcase" id="workflow" aria-labelledby="workflow-title">
+                <div class="imagine-section-heading">
+                    <h2 class="case-chapter-title imagine-showcase-title" id="workflow-title">User Flow &amp; Prototyping</h2>
+                    <p class="imagine-showcase-subtitle">Connect every step of creation</p>
+                    <p class="case-copy">I developed high-fidelity screens, reusable components and interactive prototypes to explain the experience and review design decisions with stakeholders and engineers.</p>
+                </div>
+                <figure class="case-figure imagine-user-flow-panel imagine-glass-frame">
+                    <img src="images/ui_design.webp" width="2304" height="1518" alt="Connected music video screens showing the flows for lyrics, prompt inspiration, visual styles, context and video creation." loading="lazy" decoding="async">
+                </figure>
+                <figure class="case-figure imagine-design-system-panel imagine-glass-frame">
+                    <img src="images/components.webp" width="2304" height="1144" alt="Reusable keyframe and clip components, lyrics, transitions, edit controls, loading indicators and error states." loading="lazy" decoding="async">
+                </figure>
+            </section>
+
+            <section class="case-chapter imagine-showcase" id="development-support" aria-labelledby="development-support-title">
+                <div class="imagine-development-lettering" aria-hidden="true"><span>DEVELOPMENT SUPPORT</span></div>
+                <div class="imagine-section-heading">
+                    <h2 class="case-chapter-title imagine-showcase-title" id="development-support-title">Development Support</h2>
+                    <p class="imagine-showcase-subtitle">Carry the design through to launch</p>
+                    <p class="case-copy">I reviewed staging and production to check design fidelity, filed and tracked UI/UX issues in GitHub, and worked with engineers to resolve them. Ongoing feedback during sprints helped keep the implementation aligned with the intended experience.</p>
+                </div>
+                <figure class="case-figure case-figure--wide">
+                    <img class="case-media" src="images/github_detail.webp" width="2304" height="1342" alt="GitHub profile activity and contribution history from the original case study's development support section." loading="lazy" decoding="async">
+                </figure>
+            </section>
+
+            <section class="case-chapter imagine-showcase" id="data-analytics" aria-labelledby="data-analytics-title">
+                <div class="imagine-section-heading">
+                    <h2 class="case-chapter-title imagine-showcase-title" id="data-analytics-title">Data Analytics</h2>
+                    <p class="imagine-showcase-subtitle">Understand where creators get stuck</p>
+                    <p class="case-copy">I monitored user behavior with Amplitude, OpenReplay and Google Analytics to understand drop-off points, feature adoption and interface engagement. These reports helped identify questions to investigate and opportunities to improve the experience.</p>
+                </div>
+                <ul class="imagine-analytics-tools" aria-label="Analytics tools">
+                    <li><img src="images/amplitude.svg" alt="Amplitude" loading="lazy" decoding="async"></li>
+                    <li><img src="images/openreplay.svg" alt="OpenReplay" loading="lazy" decoding="async"></li>
+                    <li><img src="images/google_analytics.svg" alt="Google Analytics" loading="lazy" decoding="async"></li>
+                </ul>
+                <div class="imagine-evidence-grid imagine-analytics-reports" aria-label="Original analytics reports">
+                    <a href="images/report01.webp" aria-label="Open analytics report: Credit balances among users who created videos." target="_blank" rel="noopener"><img class="case-media" src="images/report01.webp" width="746" height="421" alt="Credit balances among users who created videos." loading="lazy" decoding="async"></a>
+                    <a href="images/report02.webp" aria-label="Open analytics report: Video creation distribution showing that 76% of users created no videos." target="_blank" rel="noopener"><img class="case-media" src="images/report02.webp" width="746" height="421" alt="Video creation distribution showing that 76% of users created no videos." loading="lazy" decoding="async"></a>
+                    <a href="images/report03.webp" aria-label="Open analytics report: Credit usage distribution showing that 75% of users used no credits." target="_blank" rel="noopener"><img class="case-media" src="images/report03.webp" width="746" height="423" alt="Credit usage distribution showing that 75% of users used no credits." loading="lazy" decoding="async"></a>
+                    <a href="images/report04.webp" aria-label="Open analytics report: Web feature usage across music video, video, and image creation." target="_blank" rel="noopener"><img class="case-media" src="images/report04.webp" width="746" height="423" alt="Web feature usage across music video, video, and image creation." loading="lazy" decoding="async"></a>
+                    <a href="images/report05.webp" aria-label="Open analytics report: Android sessions and average session duration." target="_blank" rel="noopener"><img class="case-media" src="images/report05.webp" width="746" height="423" alt="Android sessions and average session duration." loading="lazy" decoding="async"></a>
+                    <a href="images/report06.webp" aria-label="Open analytics report: Completion analysis showing users reached the last creation step without finalizing, with credit cost identified as a hypothesis to check." target="_blank" rel="noopener"><img class="case-media" src="images/report06.webp" width="746" height="421" alt="Completion analysis showing users reached the last creation step without finalizing, with credit cost identified as a hypothesis to check." loading="lazy" decoding="async"></a>
+                    <a href="images/report07.webp" aria-label="Open analytics report: Core pages reached by users who created videos." target="_blank" rel="noopener"><img class="case-media" src="images/report07.webp" width="746" height="423" alt="Core pages reached by users who created videos." loading="lazy" decoding="async"></a>
+                    <a href="images/report08.webp" aria-label="Open analytics report: Pages reached by video creators, with notes about navigation behavior." target="_blank" rel="noopener"><img class="case-media" src="images/report08.webp" width="746" height="423" alt="Pages reached by video creators, with notes about navigation behavior." loading="lazy" decoding="async"></a>
+                    <a href="images/report09.webp" aria-label="Open analytics report: Activity among users who had not used credits." target="_blank" rel="noopener"><img class="case-media" src="images/report09.webp" width="746" height="421" alt="Activity among users who had not used credits." loading="lazy" decoding="async"></a>
+                    <a href="images/report10.webp" aria-label="Open analytics report: Last activities before users without credit usage ended their sessions." target="_blank" rel="noopener"><img class="case-media" src="images/report10.webp" width="746" height="421" alt="Last activities before users without credit usage ended their sessions." loading="lazy" decoding="async"></a>
+                    <a href="images/report11.webp" aria-label="Open analytics report: Recent last-activity paths for users without credit usage." target="_blank" rel="noopener"><img class="case-media" src="images/report11.webp" width="746" height="421" alt="Recent last-activity paths for users without credit usage." loading="lazy" decoding="async"></a>
+                    <a href="images/report12.webp" aria-label="Open analytics report: Recent web activity paths for users who created music videos." target="_blank" rel="noopener"><img class="case-media" src="images/report12.webp" width="746" height="421" alt="Recent web activity paths for users who created music videos." loading="lazy" decoding="async"></a>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    </div>
+    <a class="imagine-back-to-top" href="#page-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 12 6-6 6 6M12 6v14"/></svg>
+    </a>
 </body>
 </html>
