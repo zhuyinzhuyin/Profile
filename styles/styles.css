@@ -353,6 +353,7 @@ div.hero_content{
 	aspect-ratio: 1536 / 1024;
 }
 .imagine-project-card .thumbnail .imagine-project-screen {
+	filter: url("#imagine-preview-media-grade");
 	position: absolute;
 	left: 7.096354%;
 	top: 6.640625%;
