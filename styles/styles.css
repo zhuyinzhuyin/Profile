@@ -251,16 +251,16 @@ div.hero_content{
 	line-height: normal;
 }
 
-.mirai-project-card .case_detail {
+:is(.mirai-project-card, .imagine-project-card) .case_detail {
 	display: grid;
 	grid-template-columns: 70px minmax(0, 1fr);
 	align-items: center;
 }
 
-.mirai-project-card .case_detail .name { width: auto; white-space: nowrap; }
-.mirai-project-card .mirai-project-roles .tags { flex-wrap: nowrap; }
+:is(.mirai-project-card, .imagine-project-card) .case_detail .name { width: auto; white-space: nowrap; }
+:is(.mirai-project-card, .imagine-project-card) :is(.mirai-project-roles, .imagine-project-roles) .tags { flex-wrap: nowrap; }
 
-.mirai-project-card .mirai-project-roles .tags .tag {
+:is(.mirai-project-card, .imagine-project-card) :is(.mirai-project-roles, .imagine-project-roles) .tags .tag {
 	padding-inline: clamp(6px, 0.7vw, 10px);
 	white-space: nowrap;
 }
@@ -301,16 +301,150 @@ div.hero_content{
 }
 
 @media (max-width: 460px) {
-	.mirai-project-card .case_detail {
+	:is(.mirai-project-card, .imagine-project-card) .case_detail {
 		grid-template-columns: clamp(44px, 14vw, 54px) minmax(0, 1fr);
 		gap: clamp(4px, 1.25vw, 6px);
 	}
-	.mirai-project-card .case_detail .name { font-size: 12px; }
-	.mirai-project-card .mirai-project-roles .tags { gap: clamp(2px, 0.65vw, 4px); }
-	.mirai-project-card .mirai-project-roles .tags .tag {
+	:is(.mirai-project-card, .imagine-project-card) .case_detail .name { font-size: 12px; }
+	:is(.mirai-project-card, .imagine-project-card) :is(.mirai-project-roles, .imagine-project-roles) .tags { gap: clamp(2px, 0.65vw, 4px); }
+	:is(.mirai-project-card, .imagine-project-card) :is(.mirai-project-roles, .imagine-project-roles) .tags .tag {
 		padding-inline: clamp(2px, calc(7vw - 20.4px), 7px);
 		font-size: clamp(11px, 3.2vw, 14px);
 	}
+}
+
+.imagine-project-card { position: relative; isolation: isolate; }
+.imagine-project-card .thumbnail { height: auto; aspect-ratio: 700 / 480; }
+.imagine-project-backdrop {
+	position: absolute;
+	z-index: -1;
+	inset: 14px;
+	overflow: hidden;
+	border-radius: 10px;
+	background: #10151c;
+	pointer-events: none;
+}
+.imagine-project-backdrop::before {
+	content: "";
+	position: absolute;
+	inset: -40px;
+	background: url("../images/imagineapp/entrance/space-background.webp") center / cover no-repeat;
+	filter: blur(28px);
+	opacity: 0.55;
+}
+.imagine-project-backdrop::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, rgb(10 15 22 / 10%) 20%, rgb(12 17 24 / 72%) 65%, rgb(12 17 24 / 90%));
+}
+.imagine-project-scene { position: relative; left: 2%; width: 94%; height: 94%; isolation: isolate; }
+.imagine-project-card .thumbnail img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+	background: none;
+}
+.imagine-project-monitor {
+	position: absolute;
+	inset: 12% auto auto 4%;
+	width: 91%;
+	aspect-ratio: 1536 / 1024;
+}
+.imagine-project-card .thumbnail .imagine-project-screen {
+	position: absolute;
+	left: 7.096354%;
+	top: 6.640625%;
+	width: 85.872396%;
+	height: 70.214844%;
+	object-fit: cover;
+	object-position: center top;
+}
+.imagine-project-card .thumbnail .imagine-project-frame { position: absolute; inset: 0; height: 100%; }
+.imagine-project-astronaut-clip {
+	position: absolute;
+	z-index: 1;
+	inset: -3% 0 18.5%;
+	overflow: clip;
+}
+.imagine-project-card .thumbnail .imagine-project-astronaut {
+	position: absolute;
+	left: 12%;
+	top: 0;
+	width: 50%;
+	filter: drop-shadow(0 10px 18px rgb(0 0 0 / 35%));
+}
+.imagine-project-promotion {
+	position: absolute;
+	z-index: 3;
+	left: 50.032552%;
+	top: 41.748047%;
+	width: 44.5%;
+	transform: translate(-50%, -50%);
+	container-type: inline-size;
+	font-family: Montserrat, sans-serif;
+	letter-spacing: -0.04em;
+	pointer-events: none;
+}
+.imagine-project-promotion-copy {
+	display: grid;
+	justify-items: start;
+	width: max-content;
+	margin-inline: auto;
+}
+.imagine-project-headline,
+.imagine-project-tagline { text-shadow: 0 2px 6px rgb(0 0 0 / 65%); }
+.imagine-project-headline { color: #78d4bd; font-size: 7cqw; font-weight: 600; line-height: 1.2; }
+.imagine-project-tagline { color: #fff; font-size: 11cqw; font-weight: 400; line-height: 1.2; white-space: nowrap; }
+.imagine-project-cta {
+	justify-self: end;
+	margin-top: 3cqw;
+	padding: 2.8cqw 4.5cqw;
+	border-radius: 10cqw;
+	background: #78d4bd;
+	color: #06151a;
+	font-size: 3.5cqw;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+.imagine-project-video-panel,
+.imagine-project-phone-panel {
+	position: absolute;
+	z-index: 2;
+	bottom: 5%;
+	padding: 4px;
+	border: 1px solid rgb(255 255 255 / 16%);
+	border-radius: 10px;
+	background: rgb(31 36 43 / 70%);
+	backdrop-filter: blur(12px);
+	box-shadow: 0 12px 24px rgb(0 0 0 / 30%);
+}
+.imagine-project-video-panel { left: 0; width: 33%; }
+.imagine-project-phone-panel { right: 0; width: 15%; }
+.imagine-project-card .thumbnail :is(.imagine-project-video-panel, .imagine-project-phone-panel) img { border-radius: 6px; }
+.imagine-project-phone-screen {
+	position: relative;
+	aspect-ratio: 800 / 1808;
+	overflow: hidden;
+	border-radius: 6px;
+	background: #172321;
+}
+.imagine-project-card .thumbnail .imagine-project-phone-screen img {
+	position: absolute;
+	left: 0;
+	top: -2.212389%;
+	width: 106%;
+	max-width: none;
+	border-radius: 0;
+}
+@media (max-width: 374px) {
+	:is(.mirai-project-card, .imagine-project-card) :is(.mirai-project-roles, .imagine-project-roles) .tags { flex-wrap: wrap; }
+}
+@media (max-width: 1023px) {
+	.imagine-project-card .thumbnail { position: relative; }
+	.imagine-project-backdrop { inset: 0; }
+	.imagine-project-backdrop::after { background: rgb(10 15 22 / 25%); }
 }
 
 a.button_s{
